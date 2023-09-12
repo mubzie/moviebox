@@ -1,7 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useState, useEffect } from "react";
-import MovieCard from "./components/movieCard";
 import MovieCardHeader from "./components/movieCardHeader";
+import MovieCard from "./components/movieCard";
+import Footer from "./components/footer";
 import styles from "./App.module.css";
 
 export const apiKey = import.meta.env.VITE_API_KEY;
@@ -35,6 +36,7 @@ function App() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
