@@ -1,6 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useState, useEffect } from "react";
 import MovieCard from "./components/movieCard";
+import MovieCardHeader from "./components/movieCardHeader";
+import styles from "./App.module.css";
 
 export const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -13,7 +15,7 @@ function App() {
         `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
       );
       const data = await response.json();
-      const trendingMovies = data.results.splice(10);
+      const trendingMovies = data.results.splice(8);
       const moviesId = trendingMovies.map((movie) => movie.id.toString());
 
       setMoviesId(moviesId);
@@ -24,12 +26,15 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Movie List</h1>
+      <div className={styles.containerWrapper}>
+        <MovieCardHeader title="Feature Movie" subTitle="See more" />
+
+        <div className={styles.cardWrapper}>
+          {moviesId.map((id) => (
+            <MovieCard key={id} id={id} />
+          ))}
+        </div>
       </div>
-      {moviesId.map((id) => (
-        <MovieCard key={id} id={id} />
-      ))}
     </>
   );
 }

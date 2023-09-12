@@ -1,0 +1,60 @@
+.cardWrapper {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: max-content;
+}
+
+.image {
+  width: 250px;
+}
+
+.firstwrapper {
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  color: #9ca3af;
+}
+
+.release {
+  padding-left: 4px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.ratingContainer {
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  gap: 10px;
+  color: #111827;
+}
+
+.ratingIcon {
+  width: 35px;
+  height: 17px;
+}
+
+.genres {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+/* media query */
+@media (max-width: 600px) {
+  .card {
+    flex-grow: 1;
+  }
+  .image {
+    width: initial;
+  }
+}

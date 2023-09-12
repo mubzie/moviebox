@@ -1,0 +1,30 @@
+.body {
+  margin: 0;
+}
+
+.containerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 44px;
+  padding: 24px 96px;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+#root {
+  display: flex;
+}
+
+/* media query */
+@media (max-width: 600px) {
+  .containerWrapper {
+    padding: 24px 20px;
+    gap: 24px;
+  }
+}

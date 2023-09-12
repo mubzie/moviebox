@@ -1,0 +1,37 @@
+.title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.subTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #be123c;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+.navIcon {
+  width: 24p;
+  height: 24px;
+}
+
+.navContainer {
+  display: flex;
+  gap: 8px;
+}
+
+/* media quer */
+@media (max-width: 600px) {
+  .title {
+    font-size: 24px;
+  }
+  .subTitle {
+    font-size: 16px;
+  }
+}
