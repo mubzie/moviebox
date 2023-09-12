@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable react-refresh/only-export-components */
+import { useState, useEffect } from "react";
+import MovieCard from "./components/movieCard";
+
+export const apiKey = import.meta.env.VITE_API_KEY;
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [moviesId, setMoviesId] = useState([]);
+
+  useEffect(() => {
+    async function fetchMovieId() {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
+      );
+      const data = await response.json();
+      const trendingMovies = data.results.splice(10);
+      const moviesId = trendingMovies.map((movie) => movie.id.toString());
+
+      setMoviesId(moviesId);
+    }
+
+    fetchMovieId();
+  }, []);
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Movie List</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {moviesId.map((id) => (
+        <MovieCard key={id} id={id} />
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
