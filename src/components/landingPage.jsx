@@ -7,7 +7,7 @@ const LandingPage = () => {
   const [homeMovie, setHomeMovie] = useState([]);
   const [movieCount, setmovieCount] = useState([0, 1, 2, 3, 4]);
   const [itemsPerPage] = useState(1);
-  const [currentPage] = useState(7);
+  const [currentPage] = useState(2);
 
   const basePosterUrl = "https://image.tmdb.org/t/p/original";
 
@@ -70,13 +70,8 @@ const LandingPage = () => {
             className={styles.cardHomeMovies}
             data-testid="movie-card"
             key={movie.id}
+            style={{ backgroundImage: `url(${basePosterUrl + movie.poster})` }}
           >
-            <img
-              src={basePosterUrl + movie.poster}
-              data-testid="movie-poster"
-              className={styles.imageHomeMovie}
-            />
-
             <div className={styles.containerWrapper}>
               <div data-testid="movie-title" className={styles.title}>
                 {movie.title}
