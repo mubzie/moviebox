@@ -38,6 +38,12 @@ function App() {
             <MovieCard key={id} id={id} />
           ))}
         </div>
+
+        <div className={styles.mobileNav}>
+          <button className={styles.mobileNavBtn} disabled>
+            show more
+          </button>
+        </div>
       </div>
 
       <Footer />

@@ -31,7 +31,12 @@
   .title {
     font-size: 24px;
   }
+
   .subTitle {
     font-size: 16px;
+  }
+
+  .navContainer {
+    display: none;
   }
 }

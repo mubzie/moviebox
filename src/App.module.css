@@ -17,6 +17,15 @@
   gap: 32px;
 }
 
+.mobileNav {
+  display: none;
+}
+
+.mobileNavBtn {
+  justify-content: center;
+  padding: 24px;
+}
+
 #root {
   display: flex;
 }
@@ -30,5 +39,11 @@
 
   .cardWrapper {
     gap: 48px;
+  }
+
+  .mobileNav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
   }
 }
