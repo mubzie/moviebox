@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { apiKey } from "../App";
+import Header from "./header";
 import styles from "./landingPage.module.css";
 
 const LandingPage = () => {
@@ -72,7 +73,7 @@ const LandingPage = () => {
             key={movie.id}
             style={{ backgroundImage: `url(${basePosterUrl + movie.poster})` }}
           >
-            <div>search</div>
+            <Header />
 
             <div className={styles.containerWrapper}>
               <div data-testid="movie-title" className={styles.title}>
