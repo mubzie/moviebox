@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useState, useEffect } from "react";
+import LandingPage from "./components/landingPage";
 import MovieCardHeader from "./components/movieCardHeader";
 import MovieCard from "./components/movieCard";
 import Footer from "./components/footer";
@@ -27,6 +28,8 @@ function App() {
 
   return (
     <>
+      <LandingPage />
+
       <div className={styles.containerWrapper}>
         <MovieCardHeader title="Feature Movie" subTitle="See more" />
 
@@ -36,6 +39,7 @@ function App() {
           ))}
         </div>
       </div>
+
       <Footer />
     </>
   );

@@ -1,0 +1,92 @@
+.image {
+  width: max-content;
+}
+
+.cardHomeMovies {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.imageHomeMovie {
+  width: 100%;
+  height: 560px;
+}
+
+.containerWrapper {
+  width: 408px;
+  padding: 144px 72px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  display: flex;
+}
+
+.controlContainer {
+  position: absolute;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.subTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.ratingContainer {
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.ratingIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.ratingWrapper {
+  display: flex;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 200px;
+  height: 36px;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #be123c;
+  color: #fff;
+}
+
+/* media query */
+@media (max-width: 600px) {
+  .imageHomeMovie {
+    height: 400px;
+  }
+
+  .containerWrapper {
+    width: auto;
+    padding: 128px 24px 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

@@ -24,7 +24,11 @@
 /* media query */
 @media (max-width: 600px) {
   .containerWrapper {
-    padding: 24px 20px;
-    gap: 24px;
+    padding: 24px 24px;
+    gap: 32px;
+  }
+
+  .cardWrapper {
+    gap: 48px;
   }
 }

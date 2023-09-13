@@ -38,7 +38,7 @@
 /* media query */
 @media (max-width: 600px) {
   .footerWrapperContainer {
-    margin-top: 96px;
+    margin-top: 72px;
     margin-bottom: 56px;
   }
 
