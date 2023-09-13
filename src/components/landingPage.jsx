@@ -72,6 +72,8 @@ const LandingPage = () => {
             key={movie.id}
             style={{ backgroundImage: `url(${basePosterUrl + movie.poster})` }}
           >
+            <div>search</div>
+
             <div className={styles.containerWrapper}>
               <div data-testid="movie-title" className={styles.title}>
                 {movie.title}

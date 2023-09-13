@@ -8,8 +8,10 @@
 }
 
 .cardHomeMovies {
+  position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   height: 572px;
   background-size: cover;
   background-position: center;
