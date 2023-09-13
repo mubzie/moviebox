@@ -89,6 +89,13 @@ input::placeholder {
   }
 }
 
+@media (max-width: 900px) {
+  .headerContaner {
+    padding-right: 56px;
+    padding-left: 56px;
+  }
+}
+
 @media (max-width: 600px) {
   .headerContaner {
     padding-right: 24px;

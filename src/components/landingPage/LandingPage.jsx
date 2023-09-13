@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { apiKey } from "../App";
-import Header from "./header";
-import styles from "./landingPage.module.css";
+import { apiKey } from "../../App";
+import Header from "../header/Header";
+import styles from "./LandingPage.module.css";
 
 const LandingPage = () => {
   const [homeMovie, setHomeMovie] = useState([]);
@@ -90,8 +90,9 @@ const LandingPage = () => {
 
                 <div className={styles.ratingWrapper}>
                   <div data-testid="movie-vote">{movie.vote}</div>
-                  {"/"}
+                  {"("}
                   <div data-testid="movie-count">{movie.count}</div>
+                  {")"}
                 </div>
               </div>
 

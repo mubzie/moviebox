@@ -83,6 +83,12 @@ button {
 }
 
 /* media query */
+@media (max-width: 900px) {
+  .containerWrapper {
+    padding: 56px;
+  }
+}
+
 @media (max-width: 600px) {
   .imageHomeMovie {
     height: 400px;
