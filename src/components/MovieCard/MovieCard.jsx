@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { apiKey } from "../../App";
 import styles from "./MovieCard.module.css";
-import imdb from "/public/imdb.png";
-import Favorite from "/public/Favorite.png";
+import imdb from "/src/assets/imdb.png";
+import Favorite from "/src/assets/Favorite.png";
 
 const MovieCard = ({ id }) => {
   const [movieData, setMovieData] = useState([]);

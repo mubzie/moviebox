@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import styles from "./MovieCardHeader.module.css";
-import chevron from "/public/chevron.png";
+import chevron from "/src/assets/chevron.png";
 
 const MovieCardHeader = ({ title, subTitle }) => {
   return (

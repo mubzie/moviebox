@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Header.module.css";
-import tv from "/public/tv.png";
-import Search from "/public/Search.png";
-import Menu from "/public/Menu.png";
+import tv from "/src/assets/tv.png";
+import Search from "/src/assets/Search.png";
+import Menu from "/src/assets/Menu.png";
 
 const Header = () => {
   return (

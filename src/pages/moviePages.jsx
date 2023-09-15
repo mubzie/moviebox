@@ -1,18 +1,18 @@
 import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import styles from "./MoviePages.module.css";
-import tv from "/public/tv.png";
-import Home from "/public/Home.png";
-import projector from "/public/projector.png";
-import show from "/public/show.png";
-import Calendar from "/public/Calendar.png";
-import Logout from "/public/Logout.png";
-import Heart from "/public/Heart.png";
-import Share from "/public/Share.png";
-import Bookmark from "/public/Bookmark.png";
-import Star from "/public/Star.png";
-import tickets from "/public/tickets.png";
-import List from "/public/List.png";
+import tv from "/src/assets/tv.png";
+import Home from "/src/assets/Home.png";
+import projector from "/src/assets/projector.png";
+import show from "/src/assets/show.png";
+import Calendar from "/src/assets/Calendar.png";
+import Logout from "/src/assets/Logout.png";
+import Heart from "/src/assets/Heart.png";
+import Share from "/src/assets/Share.png";
+import Bookmark from "/src/assets/Bookmark.png";
+import Star from "/src/assets/Star.png";
+import tickets from "/src/assets/tickets.png";
+import List from "/src/assets/List.png";
 
 const MoviePage = () => {
   let { imdb_id = "" } = useParams();

@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { apiKey } from "../../App";
 import Header from "../header/Header";
 import styles from "./LandingPage.module.css";
-import Star from "/public/Star.png";
-import Play from "/public/Play.png";
+import Star from "/src/assets/Star.png";
+import Play from "/src/assets/Play.png";
 // import Star from '/public/Star.png'
 
 const LandingPage = () => {
