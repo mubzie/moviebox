@@ -1,5 +1,17 @@
 import { useParams, useLocation } from "react-router-dom";
 import styles from "./MoviePages.module.css";
+import tv from "/public/tv.png";
+import Home from "/public/Home.png";
+import projector from "/public/projector.png";
+import show from "/public/show.png";
+import Calendar from "/public/Calendar.png";
+import Logout from "/public/Logout.png";
+import Heart from "/public/Heart.png";
+import Share from "/public/Share.png";
+import Bookmark from "/public/Bookmark.png";
+import Star from "/public/Star.png";
+import tickets from "/public/tickets.png";
+import List from "/public/List.png";
 
 const MoviePage = () => {
   let { imdb_id = "" } = useParams();
@@ -17,27 +29,23 @@ const MoviePage = () => {
         <aside>
           <div className={styles.asideHeader}>
             {" "}
-            <img src="../public/tv.png" className={styles.asideIcon}></img>{" "}
-            MovieBox
+            <img src={tv} className={styles.asideIcon}></img> MovieBox
           </div>
           <ul className={styles.ulPages}>
             <li>
-              <img src="../public/Home.png" className={styles.pages}></img>
+              <img src={Home} className={styles.pages}></img>
               Home
             </li>
             <li style={{ backgroundColor: "#FFEAEF", color: "#BE123C" }}>
-              <img
-                src="../public/Movie Projector.png"
-                className={styles.pages}
-              ></img>
+              <img src={projector} className={styles.pages}></img>
               Movies
             </li>
             <li>
-              <img src="../public/TV Show.png" className={styles.pages}></img>
+              <img src={show} className={styles.pages}></img>
               TV series
             </li>
             <li>
-              <img src="../public/Calendar.png" className={styles.pages}></img>
+              <img src={Calendar} className={styles.pages}></img>
               Upcomin
             </li>
           </ul>
@@ -52,7 +60,7 @@ const MoviePage = () => {
 
           <ul className={styles.ulPages} style={{ marginBottom: "56px" }}>
             <li>
-              <img src="../public/Logout.png" className={styles.pages}></img>
+              <img src={Logout} className={styles.pages}></img>
               Log out{" "}
             </li>
           </ul>
@@ -88,18 +96,12 @@ const MoviePage = () => {
 
             <div className={styles.rightSide}>
               <div className={styles.rightSideIcon}>
-                <img src="../public/Heart.png" className={styles.dIcon}></img>
-                <img src="../public/Share.png" className={styles.dIcon}></img>
-                <img
-                  src="../public/Bookmark.png"
-                  className={styles.dIcon}
-                ></img>
+                <img src={Heart} className={styles.dIcon}></img>
+                <img src={Share} className={styles.dIcon}></img>
+                <img src={Bookmark} className={styles.dIcon}></img>
 
                 <div className={styles.ratingIconContainer}>
-                  <img
-                    src="../public/Star.png"
-                    className={styles.ratingIcon}
-                  ></img>
+                  <img src={Star} className={styles.ratingIcon}></img>
                   <div className={styles.ratingWrapper}>
                     <div data-testid="movie-vote">{movieData?.vote}</div>
                     {"|"}
@@ -111,10 +113,7 @@ const MoviePage = () => {
               <div className={styles.optionBtn}>
                 <button className={styles.optionIcon}>
                   <span>
-                    <img
-                      src="../public/Two Tickets.png"
-                      className={styles.optIcon}
-                    ></img>
+                    <img src={tickets} className={styles.optIcon}></img>
                   </span>
                   See Showtimes
                 </button>
@@ -128,12 +127,9 @@ const MoviePage = () => {
                   }}
                 >
                   <span>
-                    <img
-                      src="../public/List.png"
-                      className={styles.optIcon}
-                    ></img>
+                    <img src={List} className={styles.optIcon}></img>
                   </span>
-                  More watca options
+                  More watch options
                 </button>
               </div>
             </div>

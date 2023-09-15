@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { apiKey } from "../../App";
 import Header from "../header/Header";
 import styles from "./LandingPage.module.css";
+import Star from '/public/Star.png'
+import Play from '/public/Play.png'
+// import Star from '/public/Star.png'
 
 const LandingPage = () => {
   const [homeMovie, setHomeMovie] = useState([]);
@@ -80,7 +83,7 @@ const LandingPage = () => {
               <div className={styles.ratingContainer}>
                 <div className={styles.ratingIconContainer}>
                   <img
-                    src="../public/Star.png"
+                    src={Star}
                     className={styles.ratingIcon}
                   ></img>
                 </div>
@@ -100,7 +103,7 @@ const LandingPage = () => {
               <button>
                 <span>
                   <img
-                    src="../public/Play.png"
+                    src={Play}
                     className={styles.ratingIcon}
                   ></img>
                 </span>

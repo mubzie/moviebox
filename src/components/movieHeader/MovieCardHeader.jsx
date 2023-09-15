@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import styles from "./movieCardHeader.module.css";
+import chevron from "/public/chevron.png";
 
 const MovieCardHeader = ({ title, subTitle }) => {
   return (
@@ -9,10 +10,7 @@ const MovieCardHeader = ({ title, subTitle }) => {
       <div className={styles.navContainer}>
         <div className={styles.subTitle}>{subTitle}</div>
         <div className={styles.navIconContainer}>
-          <img
-            src="../src/assets/chevron-right.png"
-            className={styles.navIcon}
-          ></img>
+          <img src={chevron} className={styles.navIcon}></img>
         </div>
       </div>
     </div>

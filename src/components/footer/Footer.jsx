@@ -1,23 +1,18 @@
 import styles from "./Footer.module.css";
+import instagram from "/public/instagram.png";
+import fb from "/public/fb.png";
+import yt from "/public/yt.png";
+import twitter from "/public/twitter.png";
 
 const Footer = () => {
   return (
     <>
       <div className={styles.footerWrapperContainer}>
         <div className={styles.socialMediaContainer}>
-          <img src="./public/Vector.png" className={styles.smIcon}></img>
-          <img
-            src="./public/fa-brands_instagram.png"
-            className={styles.smIcon}
-          ></img>
-          <img
-            src="./public/fa-brands_twitter.png"
-            className={styles.smIcon}
-          ></img>
-          <img
-            src="./public/fa-brands_youtube.png"
-            className={styles.smIcon}
-          ></img>
+          <img src={fb} className={styles.smIcon}></img>
+          <img src={instagram} className={styles.smIcon}></img>
+          <img src={twitter} className={styles.smIcon}></img>
+          <img src={yt} className={styles.smIcon}></img>
         </div>
 
         <ul className={styles.footerListItems}>

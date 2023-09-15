@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { apiKey } from "../../App";
 import styles from "./MovieCard.module.css";
+import imdb from "/public/imdb.png";
+import Favorite from "/public/Favorite.png";
 
 const MovieCard = ({ id }) => {
   const [movieData, setMovieData] = useState([]);
@@ -74,10 +76,7 @@ const MovieCard = ({ id }) => {
           className={styles.favoriteBtn}
           onClick={() => handleClick(movieData.id)}
         >
-          <img
-            src="../public/Favorite.png"
-            className={styles.favoriteIcon}
-          ></img>
+          <img src={Favorite} className={styles.favoriteIcon}></img>
         </div>
         <Link to={`${movieData.imdb_id}`} state={movieData}>
           <img
@@ -100,10 +99,7 @@ const MovieCard = ({ id }) => {
 
           <div className={styles.ratingContainer}>
             <div className={styles.ratingIconContainer}>
-              <img
-                src="../public/imdb-icon.png"
-                className={styles.ratingIcon}
-              ></img>
+              <img src={imdb} className={styles.ratingIcon}></img>
             </div>
             <div>
               {movieData.rating} {"/ 100"}
