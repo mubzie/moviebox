@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import React from "react";
 import { useState, useEffect } from "react";
 import LandingPage from "./components/landingPage/LandingPage";
 import MovieCardHeader from "./components/movieHeader/MovieCardHeader";
