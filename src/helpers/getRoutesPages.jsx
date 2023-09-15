@@ -8,7 +8,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/:movieId",
+    path: "/:imdb_id",
     element: <MoviePage />,
   },
 ]);

@@ -2,14 +2,14 @@ import { useParams, useLocation, Link } from "react-router-dom";
 import styles from "./MoviePages.module.css";
 
 const MoviePage = () => {
-  let { movieId = "" } = useParams();
+  let { imdb_id = "" } = useParams();
   const location = useLocation();
   const movieData = location.state;
 
   const baseUrl = "https://image.tmdb.org/t/p/original";
   const backgroundImage = `${baseUrl + movieData?.poster}`;
 
-  console.log(movieId);
+  console.log(imdb_id);
   console.log(movieData);
 
   return (
@@ -29,7 +29,7 @@ const MoviePage = () => {
               <img src="../src/assets/Home.png" className={styles.pages}></img>
               Home
             </li>
-            <li>
+            <li style={{ backgroundColor: "#FFEAEF", color: "#BE123C" }}>
               <img
                 src="../src/assets/Movie Projector.png"
                 className={styles.pages}
@@ -59,6 +59,16 @@ const MoviePage = () => {
             <p>50k people are playing now</p>
             <button className={styles.asideBtn}>start playing</button>
           </div>
+
+          <ul className={styles.ulPages} style={{ marginBottom: "56px" }}>
+            <li>
+              <img
+                src="../src/assets/Logout.png"
+                className={styles.pages}
+              ></img>
+              Log out{" "}
+            </li>
+          </ul>
         </aside>
 
         <main>
@@ -112,6 +122,35 @@ const MoviePage = () => {
                     <div data-testid="movie-count">{movieData?.count}</div>
                   </div>
                 </div>
+              </div>
+
+              <div className={styles.optionBtn}>
+                <button className={styles.optionIcon}>
+                  <span>
+                    <img
+                      src="../src/assets/Two Tickets.png"
+                      className={styles.optIcon}
+                    ></img>
+                  </span>
+                  See Showtimes
+                </button>
+
+                <button
+                  className={styles.optionIcon}
+                  style={{
+                    backgroundColor: "#FFEAEF",
+                    color: "#333333",
+                    border: "1px solid #BE123C",
+                  }}
+                >
+                  <span>
+                    <img
+                      src="../src/assets/List.png"
+                      className={styles.optIcon}
+                    ></img>
+                  </span>
+                  More watca options
+                </button>
               </div>
             </div>
           </div>

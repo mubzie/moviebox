@@ -45,7 +45,7 @@ const MovieCard = ({ id }) => {
 
   return (
     <>
-      <Link to={`${id}`} state={movieData}>
+      <Link to={`${movieData.imdb_id}`} state={movieData}>
         <div data-testid="movie-card" className={styles.card}>
           <img
             src={basePosterUrl + movieData.poster}
