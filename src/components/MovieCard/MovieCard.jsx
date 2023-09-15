@@ -7,6 +7,12 @@ import styles from "./MovieCard.module.css";
 const MovieCard = ({ id }) => {
   const [movieData, setMovieData] = useState([]);
 
+  const handleClick = (cardId) => {
+    const targetDiv = document.getElementById(cardId);
+    targetDiv.style.backgroundColor = "#FFEAEF";
+    targetDiv.style.color = "#BE123C";
+  };
+
   const basePosterUrl = "https://image.tmdb.org/t/p/w342";
 
   useEffect(() => {
@@ -45,20 +51,23 @@ const MovieCard = ({ id }) => {
 
   return (
     <>
-      <Link to={`${movieData.imdb_id}`} state={movieData}>
-        <div data-testid="movie-card" className={styles.card}>
+      <div data-testid="movie-card" className={styles.card} id={movieData.id}>
+        <div
+          className={styles.favoriteBtn}
+          id="#bro"
+          onClick={() => handleClick(movieData.id)}
+        >
+          <img
+            src="../src/assets/Favorite.png"
+            className={styles.favoriteIcon}
+          ></img>
+        </div>
+        <Link to={`${movieData.imdb_id}`} state={movieData}>
           <img
             src={basePosterUrl + movieData.poster}
             data-testid="movie-poster"
             className={styles.image}
           />
-
-          <div className={styles.favoriteBtn}>
-            <img
-              src="../src/assets/Favorite.png"
-              className={styles.favoriteIcon}
-            ></img>
-          </div>
 
           <div className={styles.firstwrapper}>
             <div data-testid="movie-production-country">
@@ -89,8 +98,8 @@ const MovieCard = ({ id }) => {
           <div data-testid="movie-genre" className={styles.genres}>
             {movieData.genres}
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </>
   );
 };
