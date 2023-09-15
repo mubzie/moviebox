@@ -10,21 +10,38 @@ export const apiKey = import.meta.env.VITE_API_KEY;
 
 function App() {
   const [moviesId, setMoviesId] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchMovieId() {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
-      );
-      const data = await response.json();
-      const trendingMovies = data.results.splice(10);
-      const moviesId = trendingMovies.map((movie) => movie.id.toString());
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
+        );
+        if (response.status >= 400) {
+          throw new Error("server error");
+        }
+        const data = await response.json();
+        const trendingMovies = data.results.splice(10);
+        const moviesId = trendingMovies.map((movie) => movie.id.toString());
 
-      setMoviesId(moviesId);
+        setMoviesId(moviesId);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchMovieId();
   }, []);
+
+  if (error)
+    return (
+      <div className={styles.errorState}>A network error was encountered</div>
+    );
+  if (loading) return <div className={styles.loadingState}>Loading...</div>;
 
   return (
     <>

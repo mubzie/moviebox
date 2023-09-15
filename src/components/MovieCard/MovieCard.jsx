@@ -6,11 +6,12 @@ import styles from "./MovieCard.module.css";
 
 const MovieCard = ({ id }) => {
   const [movieData, setMovieData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const handleClick = (cardId) => {
     const targetDiv = document.getElementById(cardId);
-    targetDiv.style.backgroundColor = "#FFEAEF";
-    targetDiv.style.color = "#BE123C";
+    targetDiv.style.backgroundColor = "#487520";
   };
 
   const basePosterUrl = "https://image.tmdb.org/t/p/w342";
@@ -19,42 +20,58 @@ const MovieCard = ({ id }) => {
     let requiredData = {};
 
     async function fetchMovieData() {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
-      );
-      const data = await response.json();
-      console.log(data);
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
+        );
+        const data = await response.json();
+        console.log(data);
 
-      requiredData = {
-        ...requiredData,
-        title: data.title,
-        release_year: data.release_date.split("-")[0],
-        runtime: data.runtime,
-        overview: data.overview,
-        imdb_id: data.imdb_id,
-        id: data.id,
-        country: data.production_countries
-          .map((arr) => arr.iso_3166_1)
-          .join("-"),
-        genres: data.genres.map((arr) => arr.name).join(", "),
-        poster: data.poster_path,
-        status: data.status,
-        rating: data.vote_average.toFixed(1),
-        count: data.vote_count,
-      };
+        const date = new Date(data.release_date);
+        console.log(date);
 
-      setMovieData(requiredData);
+        const utcString = date.toUTCString();
+        console.log(utcString);
+
+        requiredData = {
+          ...requiredData,
+          title: data.title,
+          release_date: utcString,
+          runtime: data.runtime,
+          overview: data.overview,
+          imdb_id: data.imdb_id,
+          id: data.id,
+          country: data.production_countries
+            .map((arr) => arr.iso_3166_1)
+            .join("-"),
+          genres: data.genres.map((arr) => arr.name).join(", "),
+          poster: data.poster_path,
+          rating: data.vote_average.toFixed(1),
+          count: data.vote_count,
+        };
+
+        setMovieData(requiredData);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchMovieData();
   }, []);
+
+  if (error)
+    return (
+      <div className={styles.errorState}>A network error was encountered</div>
+    );
+  if (loading) return <div className={styles.loadingState}>Loading...</div>;
 
   return (
     <>
       <div data-testid="movie-card" className={styles.card} id={movieData.id}>
         <div
           className={styles.favoriteBtn}
-          id="#bro"
           onClick={() => handleClick(movieData.id)}
         >
           <img
@@ -70,12 +87,10 @@ const MovieCard = ({ id }) => {
           />
 
           <div className={styles.firstwrapper}>
-            <div data-testid="movie-production-country">
-              {movieData.country}
-            </div>
+            <div>{movieData.country}</div>
             {","}
             <div data-testid="movie-release-date" className={styles.release}>
-              {movieData.release_year}
+              {movieData.release_date}
             </div>
           </div>
 
@@ -90,14 +105,12 @@ const MovieCard = ({ id }) => {
                 className={styles.ratingIcon}
               ></img>
             </div>
-            <div data-testid="movie-rating">
+            <div>
               {movieData.rating} {"/ 100"}
             </div>
           </div>
 
-          <div data-testid="movie-genre" className={styles.genres}>
-            {movieData.genres}
-          </div>
+          <div className={styles.genres}>{movieData.genres}</div>
         </Link>
       </div>
     </>
