@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import styles from "./movieCardHeader.module.css";
+import styles from "./MovieCardHeader.module.css";
 import chevron from "/public/chevron.png";
 
 const MovieCardHeader = ({ title, subTitle }) => {
