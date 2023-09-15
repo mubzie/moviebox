@@ -33,6 +33,18 @@ a {
   display: flex;
 }
 
+.loadingState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* media query */
 @media (max-width: 900px) {
   .containerWrapper {

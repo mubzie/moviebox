@@ -1,4 +1,4 @@
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import styles from "./MoviePages.module.css";
 
 const MoviePage = () => {
@@ -7,7 +7,6 @@ const MoviePage = () => {
   const movieData = location.state;
 
   const baseUrl = "https://image.tmdb.org/t/p/original";
-  const backgroundImage = `${baseUrl + movieData?.poster}`;
 
   console.log(imdb_id);
   console.log(movieData);
@@ -76,23 +75,26 @@ const MoviePage = () => {
             <img
               src={baseUrl + movieData?.poster}
               className={styles.asideImg}
+              data-testid="movie-poster"
             ></img>
           </div>
 
           <div className={styles.containerPages}>
             <div className={styles.leftSide}>
               <div className={styles.heading}>
-                <div>{movieData?.title}</div>
+                <div data-testid="movie-title">{movieData?.title}</div>
                 {" • "}
-                <div>{movieData?.release_year}</div>
+                <div data-testid="movie-release-date">
+                  {movieData?.release_date}
+                </div>
                 {" • "}
-                <div>{movieData?.runtime}mins</div>
+                <div data-testid="movie-runtime">{movieData?.runtime}mins</div>
                 {" • "}
                 <div>{movieData?.genres}</div>
               </div>
 
               <div className={styles.subHeading}>
-                <div>{movieData?.overview}</div>
+                <div data-testid="movie-overview">{movieData?.overview}</div>
               </div>
             </div>
 

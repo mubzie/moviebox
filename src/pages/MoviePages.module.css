@@ -133,7 +133,7 @@ button.asideBtn {
 .heading {
   display: flex;
   gap: 8px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: #404040;
 }

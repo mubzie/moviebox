@@ -8,7 +8,9 @@ const LandingPage = () => {
   const [homeMovie, setHomeMovie] = useState([]);
   const [movieCount, setmovieCount] = useState([0, 1, 2, 3, 4]);
   const [itemsPerPage] = useState(1);
-  const [currentPage] = useState(51);
+  const [currentPage] = useState(63);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const basePosterUrl = "https://image.tmdb.org/t/p/original";
 
@@ -16,52 +18,47 @@ const LandingPage = () => {
     let requiredData = [];
 
     async function fetchTopRated() {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`
-      );
-      const data = await response.json();
-      console.log(data);
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`
+        );
+        const data = await response.json();
+        // console.log(data);
 
-      const topRated = data.results.splice(15);
+        const topRated = data.results.splice(15);
 
-      console.log(topRated);
+        // console.log(topRated);
 
-      movieCount.map((index) => {
-        requiredData = [
-          ...requiredData,
-          {
-            id: topRated[index]["id"],
-            title: topRated[index]["title"],
-            overview: topRated[index]["overview"],
-            vote: topRated[index]["vote_average"],
-            count: topRated[index]["vote_count"],
-            poster: topRated[index]["backdrop_path"],
-          },
-        ];
-      });
+        movieCount.map((index) => {
+          requiredData = [
+            ...requiredData,
+            {
+              id: topRated[index]["id"],
+              title: topRated[index]["title"],
+              overview: topRated[index]["overview"],
+              vote: topRated[index]["vote_average"],
+              count: topRated[index]["vote_count"],
+              poster: topRated[index]["backdrop_path"],
+            },
+          ];
+        });
 
-      //   requiredData = [
-      //     ...requiredData,
-      //     {
-      //       title: topRated.title,
-      //       overview: topRated.overview,
-      //       vote: topRated.vote_average,
-      //       count: topRated.vote_count,
-      //       poster: topRated.poster_path,
-      //     },
-      //     // release_year: data.release_date.split("-")[0],
-      //     //   runtime: data.runtime,
-      //     //   imdb_id: data.imdb_id,
-      //     //   id: data.id,
-      //     //   country: data.production_countries.map((arr) => arr.iso_3166_1),
-      //     //   genres: data.genres.map((arr) => arr.name).join(", "),
-      //     //   status: data.status,
-      //   ];
-      setHomeMovie([...requiredData]);
+        setHomeMovie([...requiredData]);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchTopRated();
   }, [currentPage]);
+
+  if (error)
+    return (
+      <div className={styles.errorState}>A network error was encountered</div>
+    );
+  if (loading) return <div className={styles.loadingState}>Loading...</div>;
 
   return (
     <>
