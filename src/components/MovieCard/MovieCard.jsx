@@ -53,6 +53,13 @@ const MovieCard = ({ id }) => {
             className={styles.image}
           />
 
+          <div className={styles.favoriteBtn}>
+            <img
+              src="../src/assets/Favorite.png"
+              className={styles.favoriteIcon}
+            ></img>
+          </div>
+
           <div className={styles.firstwrapper}>
             <div data-testid="movie-production-country">
               {movieData.country}
