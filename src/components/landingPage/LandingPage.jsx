@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
+import React from "react";
 import { useState, useEffect } from "react";
 import { apiKey } from "../../App";
 import Header from "../header/Header";
 import styles from "./LandingPage.module.css";
-import Star from '/public/Star.png'
-import Play from '/public/Play.png'
+import Star from "/public/Star.png";
+import Play from "/public/Play.png";
 // import Star from '/public/Star.png'
 
 const LandingPage = () => {
@@ -82,10 +83,7 @@ const LandingPage = () => {
 
               <div className={styles.ratingContainer}>
                 <div className={styles.ratingIconContainer}>
-                  <img
-                    src={Star}
-                    className={styles.ratingIcon}
-                  ></img>
+                  <img src={Star} className={styles.ratingIcon}></img>
                 </div>
 
                 <div className={styles.ratingWrapper}>
@@ -102,10 +100,7 @@ const LandingPage = () => {
 
               <button>
                 <span>
-                  <img
-                    src={Play}
-                    className={styles.ratingIcon}
-                  ></img>
+                  <img src={Play} className={styles.ratingIcon}></img>
                 </span>
                 watch trailer
               </button>

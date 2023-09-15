@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Footer.module.css";
 import instagram from "/public/instagram.png";
 import fb from "/public/fb.png";

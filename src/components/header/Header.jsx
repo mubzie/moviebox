@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Header.module.css";
 import tv from "/public/tv.png";
 import Search from "/public/Search.png";
