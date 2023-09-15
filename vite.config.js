@@ -4,6 +4,7 @@ import { qrcode } from "vite-plugin-qrcode";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/moviebox",
   plugins: [react(), qrcode()],
   build: {},
 });
