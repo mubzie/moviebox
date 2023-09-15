@@ -6,7 +6,7 @@ const Header = () => {
       <div className={styles.headerContaner}>
         <div className={styles.homeNav}>
           <span>
-            <img src="../src/assets/tv.png" className={styles.headerIcon}></img>
+            <img src="../public/tv.png" className={styles.headerIcon}></img>
           </span>
           <span className={styles.navText}>MovieBox</span>
         </div>
@@ -14,17 +14,14 @@ const Header = () => {
         <div className={styles.searchBox}>
           <input type="text" placeholder="search for movies"></input>
           <span className={styles.searchIconSpan}>
-            <img
-              src="../src/assets/Search.png"
-              className={styles.searchIcon}
-            ></img>
+            <img src="../public/Search.png" className={styles.searchIcon}></img>
           </span>
         </div>
 
         <div className={styles.menuContainer}>
           <span className={styles.menuText}>sign in</span>
           <span>
-            <img src="../src/assets/Menu.png" className={styles.menuIcon}></img>
+            <img src="../public/Menu.png" className={styles.menuIcon}></img>
           </span>
         </div>
       </div>

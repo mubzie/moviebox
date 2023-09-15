@@ -75,7 +75,7 @@ const MovieCard = ({ id }) => {
           onClick={() => handleClick(movieData.id)}
         >
           <img
-            src="../src/assets/Favorite.png"
+            src="../public/Favorite.png"
             className={styles.favoriteIcon}
           ></img>
         </div>
@@ -101,7 +101,7 @@ const MovieCard = ({ id }) => {
           <div className={styles.ratingContainer}>
             <div className={styles.ratingIconContainer}>
               <img
-                src="../src/assets/imdb-icon.png"
+                src="../public/imdb-icon.png"
                 className={styles.ratingIcon}
               ></img>
             </div>

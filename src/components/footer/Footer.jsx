@@ -5,17 +5,17 @@ const Footer = () => {
     <>
       <div className={styles.footerWrapperContainer}>
         <div className={styles.socialMediaContainer}>
-          <img src="./src/assets/Vector.png" className={styles.smIcon}></img>
+          <img src="./public/Vector.png" className={styles.smIcon}></img>
           <img
-            src="./src/assets/fa-brands_instagram.png"
+            src="./public/fa-brands_instagram.png"
             className={styles.smIcon}
           ></img>
           <img
-            src="./src/assets/fa-brands_twitter.png"
+            src="./public/fa-brands_twitter.png"
             className={styles.smIcon}
           ></img>
           <img
-            src="./src/assets/fa-brands_youtube.png"
+            src="./public/fa-brands_youtube.png"
             className={styles.smIcon}
           ></img>
         </div>

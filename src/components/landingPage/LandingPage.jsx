@@ -80,7 +80,7 @@ const LandingPage = () => {
               <div className={styles.ratingContainer}>
                 <div className={styles.ratingIconContainer}>
                   <img
-                    src="../src/assets/Star.png"
+                    src="../public/Star.png"
                     className={styles.ratingIcon}
                   ></img>
                 </div>
@@ -100,7 +100,7 @@ const LandingPage = () => {
               <button>
                 <span>
                   <img
-                    src="../src/assets/Play.png"
+                    src="../public/Play.png"
                     className={styles.ratingIcon}
                   ></img>
                 </span>

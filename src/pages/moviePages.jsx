@@ -17,36 +17,27 @@ const MoviePage = () => {
         <aside>
           <div className={styles.asideHeader}>
             {" "}
-            <img
-              src="../src/assets/tv.png"
-              className={styles.asideIcon}
-            ></img>{" "}
+            <img src="../public/tv.png" className={styles.asideIcon}></img>{" "}
             MovieBox
           </div>
           <ul className={styles.ulPages}>
             <li>
-              <img src="../src/assets/Home.png" className={styles.pages}></img>
+              <img src="../public/Home.png" className={styles.pages}></img>
               Home
             </li>
             <li style={{ backgroundColor: "#FFEAEF", color: "#BE123C" }}>
               <img
-                src="../src/assets/Movie Projector.png"
+                src="../public/Movie Projector.png"
                 className={styles.pages}
               ></img>
               Movies
             </li>
             <li>
-              <img
-                src="../src/assets/TV Show.png"
-                className={styles.pages}
-              ></img>
+              <img src="../public/TV Show.png" className={styles.pages}></img>
               TV series
             </li>
             <li>
-              <img
-                src="../src/assets/Calendar.png"
-                className={styles.pages}
-              ></img>
+              <img src="../public/Calendar.png" className={styles.pages}></img>
               Upcomin
             </li>
           </ul>
@@ -61,10 +52,7 @@ const MoviePage = () => {
 
           <ul className={styles.ulPages} style={{ marginBottom: "56px" }}>
             <li>
-              <img
-                src="../src/assets/Logout.png"
-                className={styles.pages}
-              ></img>
+              <img src="../public/Logout.png" className={styles.pages}></img>
               Log out{" "}
             </li>
           </ul>
@@ -100,22 +88,16 @@ const MoviePage = () => {
 
             <div className={styles.rightSide}>
               <div className={styles.rightSideIcon}>
+                <img src="../public/Heart.png" className={styles.dIcon}></img>
+                <img src="../public/Share.png" className={styles.dIcon}></img>
                 <img
-                  src="../src/assets/Heart.png"
-                  className={styles.dIcon}
-                ></img>
-                <img
-                  src="../src/assets/Share.png"
-                  className={styles.dIcon}
-                ></img>
-                <img
-                  src="../src/assets/Bookmark.png"
+                  src="../public/Bookmark.png"
                   className={styles.dIcon}
                 ></img>
 
                 <div className={styles.ratingIconContainer}>
                   <img
-                    src="../src/assets/Star.png"
+                    src="../public/Star.png"
                     className={styles.ratingIcon}
                   ></img>
                   <div className={styles.ratingWrapper}>
@@ -130,7 +112,7 @@ const MoviePage = () => {
                 <button className={styles.optionIcon}>
                   <span>
                     <img
-                      src="../src/assets/Two Tickets.png"
+                      src="../public/Two Tickets.png"
                       className={styles.optIcon}
                     ></img>
                   </span>
@@ -147,7 +129,7 @@ const MoviePage = () => {
                 >
                   <span>
                     <img
-                      src="../src/assets/List.png"
+                      src="../public/List.png"
                       className={styles.optIcon}
                     ></img>
                   </span>
