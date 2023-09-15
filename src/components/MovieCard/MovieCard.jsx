@@ -27,12 +27,11 @@ const MovieCard = ({ id }) => {
           `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
         );
         const data = await response.json();
-        console.log(data);
 
         const date = new Date(data.release_date);
-        console.log(date);
 
         const utcString = date.toUTCString();
+
         console.log(utcString);
 
         requiredData = {
