@@ -17,7 +17,7 @@ function App() {
         `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
       );
       const data = await response.json();
-      const trendingMovies = data.results.splice(8);
+      const trendingMovies = data.results.splice(10);
       const moviesId = trendingMovies.map((movie) => movie.id.toString());
 
       setMoviesId(moviesId);

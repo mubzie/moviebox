@@ -8,7 +8,7 @@ const LandingPage = () => {
   const [homeMovie, setHomeMovie] = useState([]);
   const [movieCount, setmovieCount] = useState([0, 1, 2, 3, 4]);
   const [itemsPerPage] = useState(1);
-  const [currentPage] = useState(2);
+  const [currentPage] = useState(51);
 
   const basePosterUrl = "https://image.tmdb.org/t/p/original";
 
