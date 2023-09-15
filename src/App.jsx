@@ -1,6 +1,4 @@
 /* eslint-disable react-refresh/only-export-components */
-// eslint-disable-next-line no-unused-vars
-import React from "react";
 import { useState, useEffect } from "react";
 import LandingPage from "./components/landingPage/LandingPage";
 import MovieCardHeader from "./components/movieHeader/MovieCardHeader";
