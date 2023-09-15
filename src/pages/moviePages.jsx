@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import styles from "./MoviePages.module.css";
 import tv from "/public/tv.png";
