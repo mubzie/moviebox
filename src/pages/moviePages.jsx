@@ -139,7 +139,7 @@ const MoviePage = () => {
                   {movieData?.release_date}
                 </div>
                 {" • "}
-                <div data-testid="movie-runtime">{movieData?.runtime}mins</div>
+                <div data-testid="movie-runtime">{movieData?.runtime} mins</div>
                 {" • "}
                 <div>{movieData?.genres}</div>
               </div>

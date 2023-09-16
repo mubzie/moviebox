@@ -30,16 +30,10 @@ const MovieCard = ({ id }) => {
         );
         const data = await response.json();
 
-        const date = new Date(data.release_date);
-
-        const utcString = date.toUTCString();
-
-        console.log(utcString);
-
         requiredData = {
           ...requiredData,
           title: data.title,
-          release_date: utcString,
+          release_date: data.release_date,
           runtime: data.runtime,
           overview: data.overview,
           imdb_id: data.imdb_id,
