@@ -4,7 +4,7 @@ import { qrcode } from "vite-plugin-qrcode";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./",
+  base: "/",
   plugins: [react(), qrcode()],
   build: {},
 });
