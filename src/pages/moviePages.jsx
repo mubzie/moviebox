@@ -15,14 +15,14 @@ import tickets from "/src/assets/tickets.png";
 import List from "/src/assets/List.png";
 
 const MoviePage = () => {
-  let { imdb_id = "" } = useParams();
+  let { id = "" } = useParams();
   const location = useLocation();
   const movieData = location.state;
 
   const baseUrl = "https://image.tmdb.org/t/p/original";
 
-  console.log(imdb_id);
-  console.log(movieData);
+  // console.log(imdb_id);
+  // console.log(movieData);
 
   return (
     <>
@@ -73,6 +73,7 @@ const MoviePage = () => {
               src={baseUrl + movieData?.poster}
               className={styles.asideImg}
               data-testid="movie-poster"
+              alt="movie poster"
             ></img>
           </div>
 

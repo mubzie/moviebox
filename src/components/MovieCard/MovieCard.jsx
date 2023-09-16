@@ -78,10 +78,11 @@ const MovieCard = ({ id }) => {
         >
           <img src={Favorite} className={styles.favoriteIcon}></img>
         </div>
-        <Link to={`${movieData.imdb_id}`} state={movieData}>
+        <Link to={`movies/${movieData.id}`} state={movieData}>
           <img
             src={basePosterUrl + movieData.poster}
             data-testid="movie-poster"
+            alt="movie poster"
             className={styles.image}
           />
 
