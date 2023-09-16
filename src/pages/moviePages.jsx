@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import styles from "./MoviePages.module.css";
@@ -15,6 +16,7 @@ import tickets from "/src/assets/tickets.png";
 import List from "/src/assets/List.png";
 
 const MoviePage = () => {
+  // eslint-disable-next-line no-unused-vars
   let { id = "" } = useParams();
   const location = useLocation();
   const movieData = location.state;
