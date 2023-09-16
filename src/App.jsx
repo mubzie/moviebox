@@ -40,7 +40,9 @@ function App() {
 
   if (error)
     return (
-      <div className={styles.errorState}>A network error was encountered</div>
+      <div className={styles.errorState}>
+        A network error was encountered eror.message
+      </div>
     );
   if (loading) return <div className={styles.loadingState}>Loading...</div>;
 

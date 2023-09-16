@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useState, useEffect } from "react";
-import { apiKey } from "../../App";
 import Header from "../header/Header";
 import styles from "./LandingPage.module.css";
 import Star from "/src/assets/Star.png";
 import Play from "/src/assets/Play.png";
 // import Star from '/public/Star.png'
+
+const apiKey = import.meta.env.VITE_API_KEY;
 
 const LandingPage = () => {
   const [homeMovie, setHomeMovie] = useState([]);
@@ -27,11 +28,8 @@ const LandingPage = () => {
           `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`
         );
         const data = await response.json();
-        // console.log(data);
 
         const topRated = data.results.splice(15);
-
-        // console.log(topRated);
 
         movieCount.map((index) => {
           requiredData = [
@@ -60,7 +58,9 @@ const LandingPage = () => {
 
   if (error)
     return (
-      <div className={styles.errorState}>A network error was encountered</div>
+      <div className={styles.errorState}>
+        A network error was encountered error.message
+      </div>
     );
   if (loading) return <div className={styles.loadingState}>Loading...</div>;
 

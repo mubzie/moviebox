@@ -2,10 +2,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { apiKey } from "../../App";
 import styles from "./MovieCard.module.css";
 import imdb from "/src/assets/imdb.png";
 import Favorite from "/src/assets/Favorite.png";
+
+const apiKey = import.meta.env.VITE_API_KEY;
 
 const MovieCard = ({ id }) => {
   const [movieData, setMovieData] = useState([]);
@@ -65,7 +66,9 @@ const MovieCard = ({ id }) => {
 
   if (error)
     return (
-      <div className={styles.errorState}>A network error was encountered</div>
+      <div className={styles.errorState}>
+        A network error was encountered error.message
+      </div>
     );
   if (loading) return <div className={styles.loadingState}>Loading...</div>;
 
@@ -78,7 +81,7 @@ const MovieCard = ({ id }) => {
         >
           <img src={Favorite} className={styles.favoriteIcon}></img>
         </div>
-        <Link to={`movies/${movieData.id}`} state={movieData}>
+        <Link to={`movies/${movieData.id}`}>
           <img
             src={basePosterUrl + movieData.poster}
             data-testid="movie-poster"
