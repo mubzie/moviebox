@@ -126,7 +126,6 @@ const MoviePage = () => {
             <img
               src={baseUrl + movieData?.poster}
               className={styles.asideImg}
-              data-testid="movie-poster"
               alt="movie poster"
             ></img>
           </div>
@@ -159,9 +158,9 @@ const MoviePage = () => {
                 <div className={styles.ratingIconContainer}>
                   <img src={Star} className={styles.ratingIcon}></img>
                   <div className={styles.ratingWrapper}>
-                    <div data-testid="movie-vote">{movieData?.vote}</div>
+                    <div>{movieData?.vote}</div>
                     {"|"}
-                    <div data-testid="movie-count">{movieData?.count}</div>
+                    <div>{movieData?.count}</div>
                   </div>
                 </div>
               </div>

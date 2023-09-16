@@ -74,7 +74,7 @@ const MovieCard = ({ id }) => {
 
   return (
     <>
-      <div data-testid="movie-card" className={styles.card} id={movieData.id}>
+      <div className={styles.card} id={movieData.id} data-testid="movie-card">
         <div
           className={styles.favoriteBtn}
           onClick={() => handleClick(movieData.id)}
@@ -84,20 +84,20 @@ const MovieCard = ({ id }) => {
         <Link to={`movies/${movieData.id}`}>
           <img
             src={basePosterUrl + movieData.poster}
-            data-testid="movie-poster"
             alt="movie poster"
             className={styles.image}
+            data-testid="movie-poster"
           />
 
           <div className={styles.firstwrapper}>
             <div>{movieData.country}</div>
             {","}
-            <div data-testid="movie-release-date" className={styles.release}>
+            <div className={styles.release} data-testid="movie-release-date">
               {movieData.release_date}
             </div>
           </div>
 
-          <div data-testid="movie-title" className={styles.title}>
+          <div className={styles.title} data-testid="movie-title">
             {movieData.title}
           </div>
 

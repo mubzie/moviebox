@@ -13,12 +13,13 @@ function App() {
   const [moviesId, setMoviesId] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [currentPage] = useState(1);
 
   useEffect(() => {
     async function fetchMovieId() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`
         );
         if (response.status >= 400) {
           throw new Error("server error");

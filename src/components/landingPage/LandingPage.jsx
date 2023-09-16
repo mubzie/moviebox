@@ -70,14 +70,14 @@ const LandingPage = () => {
         return (
           <div
             className={styles.cardHomeMovies}
-            data-testid="movie-card"
             key={movie.id}
             style={{ backgroundImage: `url(${basePosterUrl + movie.poster})` }}
+            data-testid="movie-card"
           >
             <Header />
 
             <div className={styles.containerWrapper}>
-              <div data-testid="movie-title" className={styles.title}>
+              <div className={styles.title} data-testid="movie-title">
                 {movie.title}
               </div>
 
@@ -87,14 +87,14 @@ const LandingPage = () => {
                 </div>
 
                 <div className={styles.ratingWrapper}>
-                  <div data-testid="movie-vote">{movie.vote}</div>
+                  <div>{movie.vote}</div>
                   {"("}
-                  <div data-testid="movie-count">{movie.count}</div>
+                  <div>{movie.count}</div>
                   {")"}
                 </div>
               </div>
 
-              <div data-testid="movie-overview" className={styles.subTitle}>
+              <div className={styles.subTitle} data-testid="movie-overview">
                 {movie.overview}
               </div>
 
