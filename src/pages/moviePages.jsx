@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./MoviePages.module.css";
 import tv from "/src/assets/tv.png";
 import Home from "/src/assets/Home.png";
@@ -36,16 +36,16 @@ const MoviePage = () => {
         );
         const data = await response.json();
 
-        const date = new Date(data.release_date);
+        // const date = new Date(data.release_date);
 
-        const utcString = date.toUTCString();
+        // const utcString = date.toUTCString();
 
-        console.log(utcString);
+        // console.log(utcString);
 
         requiredData = {
           ...requiredData,
           title: data.title,
-          release_date: utcString,
+          release_date: data.release_date,
           runtime: data.runtime,
           overview: data.overview,
           imdb_id: data.imdb_id,
@@ -82,10 +82,12 @@ const MoviePage = () => {
     <>
       <div className={styles.container}>
         <aside>
-          <div className={styles.asideHeader}>
-            {" "}
-            <img src={tv} className={styles.asideIcon}></img> MovieBox
-          </div>
+          <Link to={`/`}>
+            <div className={styles.asideHeader}>
+              {" "}
+              <img src={tv} className={styles.asideIcon}></img> MovieBox
+            </div>
+          </Link>
           <ul className={styles.ulPages}>
             <li>
               <img src={Home} className={styles.pages}></img>
