@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useState, useEffect } from "react";
-import Header from "../header/Header";
+import Header from "../Header/Header";
+import Button from "../Button/Button";
 import styles from "./LandingPage.module.css";
 import Star from "/src/assets/Star.png";
 import Play from "/src/assets/Play.png";
@@ -98,12 +99,15 @@ const LandingPage = () => {
                 {movie.overview}
               </div>
 
-              <button>
-                <span>
-                  <img src={Play} className={styles.ratingIcon}></img>
-                </span>
+              <Button
+                type="primaryBtn"
+                hasIcon={true}
+                icon={Play}
+                iconPosition="before"
+                iconSize="medium"
+              >
                 watch trailer
-              </button>
+              </Button>
             </div>
           </div>
         );

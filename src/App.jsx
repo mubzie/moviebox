@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import LandingPage from "./components/landingPage/LandingPage";
 import MovieCardHeader from "./components/movieHeader/MovieCardHeader";
 import MovieCard from "./components/MovieCard/MovieCard";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 import styles from "./App.module.css";
 
 export const apiKey = import.meta.env.VITE_API_KEY;
