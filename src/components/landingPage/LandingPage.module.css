@@ -9,8 +9,9 @@
 }
 
 .containerWrapper {
-  margin-top: 24px;
-  width: 320px;
+  width: auto;
+  max-width: 400px;
+  margin-top: 64px;
   padding-left: 96px;
   display: flex;
   flex-direction: column;

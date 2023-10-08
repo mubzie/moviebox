@@ -11,10 +11,10 @@ import Play from "/src/assets/Play.png";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const LandingPage = () => {
-  const [homeMovie, setHomeMovie] = useState([]);
+  const [trendingMovie, setTrendingMovie] = useState([]);
   const [movieCount, setmovieCount] = useState([0, 1, 2, 3, 4]);
   const [itemsPerPage] = useState(1);
-  const [currentPage] = useState(63);
+  const [currentPage] = useState(2);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -23,30 +23,30 @@ const LandingPage = () => {
   useEffect(() => {
     let requiredData = [];
 
-    async function fetchTopRated() {
+    async function fetchTrendingMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`
+          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=en-US&page=${currentPage}`
         );
         const data = await response.json();
 
-        const topRated = data.results.splice(15);
+        const trendMovies = data.results.splice(15);
 
         movieCount.map((index) => {
           requiredData = [
             ...requiredData,
             {
-              id: topRated[index]["id"],
-              title: topRated[index]["title"],
-              overview: topRated[index]["overview"],
-              vote: topRated[index]["vote_average"],
-              count: topRated[index]["vote_count"],
-              poster: topRated[index]["backdrop_path"],
+              id: trendMovies[index]["id"],
+              title: trendMovies[index]["title"],
+              overview: trendMovies[index]["overview"],
+              vote: trendMovies[index]["vote_average"],
+              count: trendMovies[index]["vote_count"],
+              poster: trendMovies[index]["backdrop_path"],
             },
           ];
         });
 
-        setHomeMovie([...requiredData]);
+        setTrendingMovie([...requiredData]);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -54,7 +54,8 @@ const LandingPage = () => {
       }
     }
 
-    fetchTopRated();
+    fetchTrendingMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
   if (error)
@@ -67,7 +68,7 @@ const LandingPage = () => {
 
   return (
     <>
-      {homeMovie.slice(0, itemsPerPage).map((movie) => {
+      {trendingMovie.slice(0, itemsPerPage).map((movie) => {
         return (
           <div
             className={styles.cardHomeMovies}
