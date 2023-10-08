@@ -3,10 +3,12 @@ import styles from "./Header.module.css";
 import tv from "/src/assets/tv.png";
 import Search from "/src/assets/Search.png";
 import Menu from "/src/assets/Menu.png";
+import Logo from "../Logo/Logo";
 
 const Header = () => {
   return (
     <>
+      <Logo>MovieBox</Logo>
       <div className={styles.headerContaner}>
         <div className={styles.homeNav}>
           <span>
