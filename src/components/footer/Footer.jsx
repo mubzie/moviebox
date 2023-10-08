@@ -4,6 +4,7 @@ import instagram from "/src/assets/instagram.png";
 import fb from "/src/assets/fb.png";
 import yt from "/src/assets/yt.png";
 import twitter from "/src/assets/twitter.png";
+import Button from "../Button/Button";
 
 const Footer = () => {
   return (

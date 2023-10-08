@@ -1,0 +1,50 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 8px 16px;
+  border-radius: 6px;
+
+  font-family: DM Sans;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background: var(--rose-700, #be123c);
+  color: var(--white, #fff);
+}
+
+.secondaryBtn {
+  color: var(--rose-700, #be123c);
+  background: var(--white, #fff);
+
+  border: 2px solid var(--rose-700, #be123c);
+}
+
+.tertiaryBtn {
+  background: var(--white, #fff);
+  color: var(--rose-700, #be123c);
+
+  border: none;
+}
+
+.small {
+  width: 16px;
+  height: 16px;
+}
+
+.medium {
+  width: 24px;
+  height: 24px;
+}
+
+.large {
+  width: 32px;
+  height: 32px;
+}

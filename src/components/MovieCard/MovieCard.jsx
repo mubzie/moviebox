@@ -26,9 +26,10 @@ const MovieCard = ({ id }) => {
     async function fetchMovieData() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
+          `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&origin_country=GB`
         );
         const data = await response.json();
+        console.log(data)
 
         requiredData = {
           ...requiredData,

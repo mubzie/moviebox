@@ -1,7 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-green: #00c46a;
+  --color-white: #fff;
+  --color-dark: #000;
+  --color-grey: #aaa;
+  --color-bg: #2d3439;
+  --color-bg-2: #42484d;
+  --color-input: #d6dee0;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
+  font-family: "DM Sans", sans-serif;
+  /* max-width: 2000px; */
+  /* margin: auto; */
+  /* color: #ececec; */
 }
 
 #root {
