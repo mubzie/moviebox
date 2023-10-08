@@ -1,4 +1,5 @@
 button {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,6 +7,7 @@ button {
 
   padding: 8px 16px;
   border-radius: 6px;
+  border: none;
 
   font-family: DM Sans;
   font-size: 0.875rem;
@@ -16,8 +18,12 @@ button {
 }
 
 .primaryBtn {
+  box-sizing: border-box;
+
   background: var(--rose-700, #be123c);
   color: var(--white, #fff);
+
+  border: 2px solid var(--rose-700, #be123c);
 }
 
 .secondaryBtn {
@@ -31,7 +37,7 @@ button {
   background: var(--white, #fff);
   color: var(--rose-700, #be123c);
 
-  border: none;
+  border: 2px solid var(--white, #fff);
 }
 
 .small {

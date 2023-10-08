@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import tv from "/src/assets/tv.png";
-import Menu from "/src/assets/Menu.png";
 import styles from "./Logo.module.css";
 
 const Logo = ({ children }) => {
