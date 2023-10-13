@@ -1,3 +1,20 @@
+.containerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 44px;
+  padding: 24px 96px;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.mobileNavBtn {
+  justify-content: center;
+  padding: 24px;
+}
+
 .cardWrapper {
   display: flex;
 }
@@ -78,9 +95,21 @@
 
 /* media query */
 @media (max-width: 600px) {
+  .containerWrapper {
+    padding: 24px 24px;
+    gap: 32px;
+  }
+
+  .mobileNav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
   .card {
     flex-grow: 1;
   }
+
   .image {
     width: 100%;
   }

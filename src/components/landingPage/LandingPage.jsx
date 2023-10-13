@@ -1,22 +1,22 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Button from "../Button/Button";
 import styles from "./LandingPage.module.css";
 import Star from "/src/assets/Star.png";
 import Play from "/src/assets/Play.png";
-// import Star from '/public/Star.png'
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const LandingPage = () => {
   const [trendingMovie, setTrendingMovie] = useState([]);
-  const [movieCount, setmovieCount] = useState([0, 1, 2, 3, 4]);
+  const [movieCount] = useState([0, 1, 2]);
   const [itemsPerPage] = useState(1);
   const [currentPage] = useState(2);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [isloading, setIsLoading] = useState(true);
 
   const basePosterUrl = "https://image.tmdb.org/t/p/original";
 
@@ -31,6 +31,7 @@ const LandingPage = () => {
         const data = await response.json();
 
         const trendMovies = data.results.splice(15);
+        console.log(trendMovies);
 
         movieCount.map((index) => {
           requiredData = [
@@ -50,7 +51,9 @@ const LandingPage = () => {
       } catch (error) {
         setError(error.message);
       } finally {
-        setLoading(false);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
       }
     }
 
@@ -61,22 +64,23 @@ const LandingPage = () => {
   if (error)
     return (
       <div className={styles.errorState}>
-        A network error was encountered error.message
+        A network error was encountered `{error}`
       </div>
     );
-  if (loading) return <div className={styles.loadingState}>Loading...</div>;
 
   return (
     <>
       {trendingMovie.slice(0, itemsPerPage).map((movie) => {
         return (
           <div
-            className={styles.cardHomeMovies}
+            className={styles.cardTrendiingMovies}
             key={movie.id}
             style={{ backgroundImage: `url(${basePosterUrl + movie.poster})` }}
             data-testid="movie-card"
           >
             <Header />
+
+            {isloading && <div className={styles.loadingState}>Loading...</div>}
 
             <div className={styles.containerWrapper}>
               <div className={styles.title} data-testid="movie-title">
@@ -100,15 +104,17 @@ const LandingPage = () => {
                 {movie.overview}
               </div>
 
-              <Button
-                type="primaryBtn"
-                hasIcon={true}
-                icon={Play}
-                iconPosition="before"
-                iconSize="medium"
-              >
-                watch trailer
-              </Button>
+              <Link to={`movies/${movie.id}`}>
+                <Button
+                  type="primaryBtn"
+                  hasIcon={true}
+                  icon={Play}
+                  iconPosition="before"
+                  iconSize="medium"
+                >
+                  show more details
+                </Button>
+              </Link>
             </div>
           </div>
         );

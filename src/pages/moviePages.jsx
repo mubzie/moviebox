@@ -36,12 +36,6 @@ const MoviePage = () => {
         );
         const data = await response.json();
 
-        // const date = new Date(data.release_date);
-
-        // const utcString = date.toUTCString();
-
-        // console.log(utcString);
-
         requiredData = {
           ...requiredData,
           title: data.title,

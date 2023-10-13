@@ -19,7 +19,8 @@ function App() {
     async function fetchMovieId() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`
+          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=en-US&page=${currentPage}`
+          // `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`
         );
         if (response.status >= 400) {
           throw new Error("server error");
@@ -27,12 +28,15 @@ function App() {
         const data = await response.json();
         const trendingMovies = data.results.splice(10);
         const moviesId = trendingMovies.map((movie) => movie.id.toString());
+        // console.log(moviesId)
 
         setMoviesId(moviesId);
       } catch (error) {
         setError(error.message);
       } finally {
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
       }
     }
 
@@ -42,7 +46,7 @@ function App() {
   if (error)
     return (
       <div className={styles.errorState}>
-        A network error was encountered eror.message
+        A network error was encountered {error}
       </div>
     );
   if (loading) return <div className={styles.loadingState}>Loading...</div>;
@@ -51,21 +55,7 @@ function App() {
     <>
       <LandingPage />
 
-      <div className={styles.containerWrapper}>
-        <MovieCardHeader title="Feature Movie" subTitle="See more" />
-
-        <div className={styles.cardWrapper}>
-          {moviesId.map((id) => (
-            <MovieCard key={id} id={id} />
-          ))}
-        </div>
-
-        <div className={styles.mobileNav}>
-          <button className={styles.mobileNavBtn} disabled>
-            show more
-          </button>
-        </div>
-      </div>
+      <MovieCard />
 
       <Footer />
     </>
