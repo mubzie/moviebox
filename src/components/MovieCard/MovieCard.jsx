@@ -38,12 +38,11 @@ const MovieCard = () => {
 
         const requiredData = dataResult.map((result) => ({
           title: result.title,
+          language: result.original_language.toUpperCase(),
           release_date: result.release_date,
-          overview: result.overview,
           id: result.id,
           poster: result.poster_path,
           rating: result.vote_average,
-          count: result.vote_count,
         }));
 
         setMovieData(requiredData);
@@ -95,7 +94,7 @@ const MovieCard = () => {
                     />
 
                     <div className={styles.firstwrapper}>
-                      <div>{movie.country}</div>
+                      <div>{movie.language}</div>
                       {","}
                       <div
                         className={styles.release}
@@ -114,11 +113,9 @@ const MovieCard = () => {
                         <img src={imdb} className={styles.ratingIcon}></img>
                       </div>
                       <div>
-                        {movie.rating} {"/ 100"}
+                        {movie.rating} {"/ 10"}
                       </div>
                     </div>
-
-                    <div className={styles.genres}>{movie.genres}</div>
                   </div>
                 </Link>
               </>
