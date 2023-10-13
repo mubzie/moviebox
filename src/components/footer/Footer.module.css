@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: center;
-  margin-top: 128px;
+  margin-top: 96px;
   margin-bottom: 72px;
 }
 
@@ -28,7 +28,7 @@
 /* media query */
 @media (max-width: 600px) {
   .wrapperContainer {
-    margin-top: 72px;
+    margin-top: 56px;
     margin-bottom: 56px;
   }
 }

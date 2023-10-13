@@ -3,7 +3,13 @@
   flex-direction: column;
   justify-content: center;
   gap: 44px;
-  padding: 24px 96px;
+  padding: 24px 72px;
+}
+
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 80px;
 }
 
 .mobileNav {
@@ -15,8 +21,8 @@
   padding: 24px;
 }
 
-.cardWrapper {
-  display: flex;
+.styleHolder {
+  width: 100%;
 }
 
 .card {
@@ -48,6 +54,7 @@
   font-size: 18px;
   font-weight: 700;
   color: #111827;
+  white-space: wrap;
 }
 
 .ratingContainer {
@@ -94,14 +101,57 @@
 }
 
 /* media query */
+@media (max-width: 900px) {
+  .containerWrapper {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .cardWrapper {
+    /* padding-left: 56px;
+    padding-right: 56px; */
+
+    gap: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .cardWrapper {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    padding-left: initial;
+    padding-right: initial;
+
+    gap: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cardWrapper {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    padding-left: initial;
+    padding-right: initial;
+
+    gap: 40px;
+  }
+}
+
 @media (max-width: 600px) {
   .containerWrapper {
     padding: 24px 24px;
     gap: 32px;
   }
 
+  .cardWrapper {
+    gap: 24px;
+
+    padding-left: initial;
+    padding-right: initial;
+  }
+
   .mobileNav {
-    margin-top: 40px;
+    margin-top: 24px;
     display: flex;
     justify-content: center;
   }

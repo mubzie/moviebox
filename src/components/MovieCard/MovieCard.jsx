@@ -2,6 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import MovieCardHeader from "../movieHeader/MovieCardHeader";
+import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import styles from "./MovieCard.module.css";
 import imdb from "/src/assets/imdb.png";
@@ -27,6 +28,10 @@ const MovieCard = () => {
         const response = await fetch(
           `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&origin_country=GB`
         );
+        if (response.status >= 400) {
+          throw new Error("server error");
+        }
+
         const data = await response.json();
         const dataResult = data.results;
         console.log(dataResult);
@@ -55,7 +60,7 @@ const MovieCard = () => {
   if (error)
     return (
       <div className={styles.errorState}>
-        A network error was encountered {error}
+        A network error was encountered {error}.
       </div>
     );
   if (loading) return <div className={styles.loadingState}>Loading...</div>;
@@ -63,66 +68,72 @@ const MovieCard = () => {
   return (
     <>
       <div className={styles.containerWrapper}>
-        <MovieCardHeader title="Feature Movie" subTitle="See more" />
+        <MovieCardHeader title="Feature Movie" />
 
-        {movieData.map((movie) => {
-          return (
-            <>
-              <Link to={`movies/${movie.id}`}>
-                <div
-                  className={styles.card}
-                  id={movie.id}
-                  data-testid="movie-card"
-                >
+        <div className={styles.cardWrapper}>
+          {movieData.map((movie) => {
+            return (
+              <>
+                <Link to={`movies/${movie.id}`}>
                   <div
-                    className={styles.favoriteBtn}
-                    onClick={() => handleClick(movie.id)}
+                    className={styles.card}
+                    id={movie.id}
+                    data-testid="movie-card"
                   >
-                    <img src={Favorite} className={styles.favoriteIcon}></img>
-                  </div>
-
-                  <img
-                    src={basePosterUrl + movie.poster}
-                    alt="movie poster"
-                    className={styles.image}
-                    data-testid="movie-poster"
-                  />
-
-                  <div className={styles.firstwrapper}>
-                    <div>{movie.country}</div>
-                    {","}
                     <div
-                      className={styles.release}
-                      data-testid="movie-release-date"
+                      className={styles.favoriteBtn}
+                      onClick={() => handleClick(movie.id)}
                     >
-                      {movie.release_date}
+                      <img src={Favorite} className={styles.favoriteIcon}></img>
                     </div>
-                  </div>
 
-                  <div className={styles.title} data-testid="movie-title">
-                    {movie.title}
-                  </div>
+                    <img
+                      src={basePosterUrl + movie.poster}
+                      alt="movie poster"
+                      className={styles.image}
+                      data-testid="movie-poster"
+                    />
 
-                  <div className={styles.ratingContainer}>
-                    <div className={styles.ratingIconContainer}>
-                      <img src={imdb} className={styles.ratingIcon}></img>
+                    <div className={styles.firstwrapper}>
+                      <div>{movie.country}</div>
+                      {","}
+                      <div
+                        className={styles.release}
+                        data-testid="movie-release-date"
+                      >
+                        {movie.release_date}
+                      </div>
                     </div>
-                    <div>
-                      {movie.rating} {"/ 100"}
-                    </div>
-                  </div>
 
-                  <div className={styles.genres}>{movie.genres}</div>
-                </div>
-              </Link>
-            </>
-          );
-        })}
+                    <div className={styles.title} data-testid="movie-title">
+                      {movie.title}
+                    </div>
+
+                    <div className={styles.ratingContainer}>
+                      <div className={styles.ratingIconContainer}>
+                        <img src={imdb} className={styles.ratingIcon}></img>
+                      </div>
+                      <div>
+                        {movie.rating} {"/ 100"}
+                      </div>
+                    </div>
+
+                    <div className={styles.genres}>{movie.genres}</div>
+                  </div>
+                </Link>
+              </>
+            );
+          })}
+        </div>
 
         <div className={styles.mobileNav}>
-          <button className={styles.mobileNavBtn} disabled>
+          <Button
+            type="tertiaryBtn"
+            hasIcon={false}
+            styleHolder={styles.styleHolder}
+          >
             show more
-          </button>
+          </Button>
         </div>
       </div>
     </>

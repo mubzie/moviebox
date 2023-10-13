@@ -28,6 +28,9 @@ const LandingPage = () => {
         const response = await fetch(
           `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=en-US&page=${currentPage}`
         );
+        if (response.status >= 400) {
+          throw new Error("server error");
+        }
         const data = await response.json();
 
         const trendMovies = data.results.splice(15);
@@ -64,7 +67,7 @@ const LandingPage = () => {
   if (error)
     return (
       <div className={styles.errorState}>
-        A network error was encountered `{error}`
+        A network error was encountered {error}.
       </div>
     );
 

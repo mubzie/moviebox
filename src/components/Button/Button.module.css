@@ -19,6 +19,7 @@ button {
 }
 
 .primaryBtn {
+  white-space: nowrap;
   box-sizing: border-box;
 
   background: var(--rose-700, #be123c);
@@ -28,6 +29,7 @@ button {
 }
 
 .secondaryBtn {
+  white-space: nowrap;
   color: var(--rose-700, #be123c);
   background: var(--white, #fff);
 
@@ -35,6 +37,7 @@ button {
 }
 
 .tertiaryBtn {
+  white-space: nowrap;
   background: var(--white, #fff);
   color: var(--rose-700, #be123c);
 

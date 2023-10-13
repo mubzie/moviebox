@@ -1,19 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import Button from "../Button/Button";
 import styles from "./MovieCardHeader.module.css";
 import chevron from "/src/assets/chevron.png";
 
-const MovieCardHeader = ({ title, subTitle }) => {
+const MovieCardHeader = ({ title }) => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.title}>{title}</div>
 
-      <div className={styles.navContainer}>
-        <div className={styles.subTitle}>{subTitle}</div>
-        <div className={styles.navIconContainer}>
-          <img src={chevron} className={styles.navIcon}></img>
-        </div>
-      </div>
+      <Button
+        type="tertiaryBtn"
+        hasIcon={true}
+        icon={chevron}
+        iconPosition="after"
+        iconSize="medium"
+      >
+        see more
+      </Button>
     </div>
   );
 };

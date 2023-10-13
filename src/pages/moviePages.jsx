@@ -34,6 +34,9 @@ const MoviePage = () => {
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
         );
+        if (response.status >= 400) {
+          throw new Error("server error");
+        }
         const data = await response.json();
 
         requiredData = {
