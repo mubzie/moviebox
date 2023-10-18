@@ -9,7 +9,6 @@ const Logo = ({ children, logoText }) => {
         <img src={tv} className={styles.logoIcon}></img>
       </span>
       <div className={logoText}>{children}</div>
-      {/* <div className={styles.logoText}>{children}</div> */}
     </div>
   );
 };
