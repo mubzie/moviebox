@@ -86,13 +86,6 @@ const MovieCard = () => {
                     id={movie.id}
                     data-testid="movie-card"
                   >
-                    <div
-                      className={styles.favoriteBtn}
-                      onClick={() => handleClick(movie.id)}
-                    >
-                      <img src={Favorite} className={styles.favoriteIcon}></img>
-                    </div>
-
                     <img
                       src={basePosterUrl + movie.poster}
                       alt="movie poster"
