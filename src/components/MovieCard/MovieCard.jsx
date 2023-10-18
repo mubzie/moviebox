@@ -73,7 +73,7 @@ const MovieCard = () => {
   return (
     <>
       <div className={styles.containerWrapper}>
-        <MovieCardHeader title="Feature Movie" />
+        <MovieCardHeader title="Trending Movies" />
 
         <div className={styles.cardWrapper}>
           {movieData.map((movie) => {
