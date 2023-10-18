@@ -10,10 +10,20 @@
   padding: 16px 72px;
 }
 
-.btnContainer {
+.logoText {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btnNavDesktop {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+.btnNavMobile {
+  display: none;
 }
 
 .menuContainer {
@@ -23,6 +33,18 @@
   font-size: 16px;
   font-weight: 700;
   color: #fff;
+}
+
+.iconWrapper {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.menuIcon {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
 }
 
 /* media query */
@@ -45,6 +67,15 @@
   .headerContaner {
     padding-right: 24px;
     padding-left: 24px;
+  }
+
+  .btnNavDesktop {
+    display: none;
+  }
+
+  .btnNavMobile {
+    display: block;
+    padding: 4px;
   }
 
   .navText {

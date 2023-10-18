@@ -115,14 +115,17 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 .errorState {
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
+  padding: 16px;
+  text-align: center;
 
   display: flex;
   flex-direction: column;

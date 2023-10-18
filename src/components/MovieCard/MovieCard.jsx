@@ -59,7 +59,7 @@ const MovieCard = () => {
   if (error)
     return (
       <div className={styles.errorState}>
-        A network error was encountered {error}.
+        A network error was encountered. {error}.
       </div>
     );
   if (loading)

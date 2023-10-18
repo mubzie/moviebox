@@ -2,13 +2,14 @@
 import tv from "/src/assets/tv.png";
 import styles from "./Logo.module.css";
 
-const Logo = ({ children }) => {
+const Logo = ({ children, logoText }) => {
   return (
     <div className={styles.container}>
-      <span>
+      <span className={styles.iconWrapper}>
         <img src={tv} className={styles.logoIcon}></img>
       </span>
-      <div className={styles.logoText}>{children}</div>
+      <div className={logoText}>{children}</div>
+      {/* <div className={styles.logoText}>{children}</div> */}
     </div>
   );
 };

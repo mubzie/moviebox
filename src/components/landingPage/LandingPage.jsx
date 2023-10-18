@@ -23,57 +23,58 @@ const LandingPage = () => {
 
   const basePosterUrl = "https://image.tmdb.org/t/p/original";
 
-  useEffect(() => {
-    let requiredData = [];
+  // useEffect(() => {
+  //   let requiredData = [];
 
-    async function fetchTrendingMovies() {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=en-US&page=${currentPage}`
-        );
-        if (response.status >= 400) {
-          throw new Error("server error");
-        }
-        const data = await response.json();
+  //   async function fetchTrendingMovies() {
+  //     try {
+  //       const response = await fetch(
+  //         `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=en-US&page=${currentPage}`
+  //       );
+  //       if (response.status >= 400) {
+  //         throw new Error("server error");
+  //       }
+  //       const data = await response.json();
 
-        const trendMovies = data.results.splice(15);
-        console.log(trendMovies);
+  //       const trendMovies = data.results.splice(15);
+  //       console.log(trendMovies);
 
-        movieCount.map((index) => {
-          requiredData = [
-            ...requiredData,
-            {
-              id: trendMovies[index]["id"],
-              title: trendMovies[index]["title"],
-              overview: trendMovies[index]["overview"],
-              vote: trendMovies[index]["vote_average"],
-              count: trendMovies[index]["vote_count"],
-              poster: trendMovies[index]["backdrop_path"],
-            },
-          ];
-        });
+  //       movieCount.map((index) => {
+  //         requiredData = [
+  //           ...requiredData,
+  //           {
+  //             id: trendMovies[index]["id"],
+  //             title: trendMovies[index]["title"],
+  //             overview: trendMovies[index]["overview"],
+  //             vote: trendMovies[index]["vote_average"],
+  //             count: trendMovies[index]["vote_count"],
+  //             poster: trendMovies[index]["backdrop_path"],
+  //           },
+  //         ];
+  //       });
 
-        setTrendingMovie([...requiredData]);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
+  //       setTrendingMovie([...requiredData]);
+  //     } catch (error) {
+  //       setError(error.message);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   }
 
-    fetchTrendingMovies();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage]);
+  //   fetchTrendingMovies();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [currentPage]);
 
   if (error)
     return (
       <div className={styles.errorState}>
-        A network error was encountered {error}.
+        A network error was encountered. {error}.
       </div>
     );
 
   return (
     <>
+      <Header />
       {trendingMovie.slice(0, itemsPerPage).map((movie) => {
         return (
           <div
@@ -82,8 +83,6 @@ const LandingPage = () => {
             style={{ backgroundImage: `url(${basePosterUrl + movie.poster})` }}
             data-testid="movie-card"
           >
-            <Header />
-
             {/* <MobileNavDrawer /> */}
 
             {isloading && <div className={styles.loadingState}>Loading...</div>}
@@ -126,7 +125,7 @@ const LandingPage = () => {
         );
       })}
 
-      <MovieCard />
+      {/* <MovieCard /> */}
 
       {!isloading && <Footer />}
     </>
