@@ -15,6 +15,7 @@ const MovieCardHeader = ({ title }) => {
         icon={chevron}
         iconPosition="after"
         iconSize="medium"
+        styleHolder={styles.moreBtn}
       >
         see more
       </Button>

@@ -21,13 +21,6 @@ const Header = () => {
             register
           </Button>
         </div>
-
-        <div className={styles.menuContainer}>
-          <span className={styles.menuText}>sign in</span>
-          <span>
-            <img src={Menu} className={styles.menuIcon}></img>
-          </span>
-        </div>
       </div>
     </>
   );

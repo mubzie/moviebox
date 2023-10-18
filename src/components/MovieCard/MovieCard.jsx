@@ -62,7 +62,13 @@ const MovieCard = () => {
         A network error was encountered {error}.
       </div>
     );
-  if (loading) return <div className={styles.loadingState}>Loading...</div>;
+  if (loading)
+    return (
+      <div className={styles.loadingState}>
+        <div className={styles.loadingSpinner}></div>
+        <div className={styles.loadingText}>Loading...</div>
+      </div>
+    );
 
   return (
     <>
@@ -75,6 +81,7 @@ const MovieCard = () => {
               <>
                 <Link to={`movies/${movie.id}`}>
                   <div
+                    key={movie.id}
                     className={styles.card}
                     id={movie.id}
                     data-testid="movie-card"

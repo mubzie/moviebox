@@ -3,6 +3,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import MobileNavDrawer from "../MobileMenu/MobileMenu";
+import MovieCard from "../MovieCard/MovieCard";
+import Footer from "../Footer/Footer";
 import Button from "../Button/Button";
 import styles from "./LandingPage.module.css";
 import Star from "/src/assets/Star.png";
@@ -54,9 +57,7 @@ const LandingPage = () => {
       } catch (error) {
         setError(error.message);
       } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 2000);
+        setIsLoading(false);
       }
     }
 
@@ -82,6 +83,8 @@ const LandingPage = () => {
             data-testid="movie-card"
           >
             <Header />
+
+            {/* <MobileNavDrawer /> */}
 
             {isloading && <div className={styles.loadingState}>Loading...</div>}
 
@@ -122,6 +125,10 @@ const LandingPage = () => {
           </div>
         );
       })}
+
+      <MovieCard />
+
+      {!isloading && <Footer />}
     </>
   );
 };

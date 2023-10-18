@@ -2,8 +2,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import LandingPage from "./components/landingPage/LandingPage";
+import MobileNavDrawer from "./components/MobileMenu/MobileMenu";
 import MovieCardHeader from "./components/movieHeader/MovieCardHeader";
-import MovieCard from "./components/MovieCard/MovieCard";
+// import MovieCard from "./components/MovieCard/MovieCard";
 import Footer from "./components/Footer/Footer";
 import styles from "./App.module.css";
 
@@ -53,11 +54,13 @@ function App() {
 
   return (
     <>
+      {/* <MobileNavDrawer /> */}
+
       <LandingPage />
 
-      <MovieCard />
+      {/* <MovieCard />
 
-      <Footer />
+      <Footer /> */}
     </>
   );
 }
