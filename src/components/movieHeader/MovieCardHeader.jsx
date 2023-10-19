@@ -17,7 +17,7 @@ const MovieCardHeader = ({ title }) => {
         iconSize="medium"
         styleHolder={styles.moreBtn}
       >
-        see more
+        show more
       </Button>
     </div>
   );
