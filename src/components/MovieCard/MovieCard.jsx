@@ -117,15 +117,17 @@ const MovieCard = () => {
           })}
         </div>
 
-        <div className={styles.mobileNav}>
-          <Button
-            type="tertiaryBtn"
-            hasIcon={false}
-            styleHolder={styles.styleHolder}
-          >
-            show more
-          </Button>
-        </div>
+        <Link to="/default">
+          <div className={styles.mobileNav}>
+            <Button
+              type="tertiaryBtn"
+              hasIcon={false}
+              styleHolder={styles.styleHolder}
+            >
+              show more
+            </Button>
+          </div>
+        </Link>
       </div>
     </>
   );

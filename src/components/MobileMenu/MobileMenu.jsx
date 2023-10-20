@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import closeBtn from "../../assets/close.png";
@@ -21,13 +22,16 @@ const MobileMenu = ({ isOpen, onClose }) => {
         </div>
 
         <div className={styles.btnNavMobile}>
-          <Button type="secondaryBtn" hasIcon={false}>
-            log in
-          </Button>
-
-          <Button type="primaryBtn" hasIcon={false}>
-            register
-          </Button>
+          <Link to="/default">
+            <Button type="secondaryBtn" hasIcon={false}>
+              log in
+            </Button>
+          </Link>
+          <Link to="/default">
+            <Button type="primaryBtn" hasIcon={false}>
+              register
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

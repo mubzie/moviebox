@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  top: 30%;
+  bottom: 50%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  max-width: 400px;
+  padding: 24px;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.btnContainer {
+  margin: auto;
+  padding-top: 40px;
+  max-width: 240px;
+}

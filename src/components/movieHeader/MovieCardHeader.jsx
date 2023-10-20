@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./MovieCardHeader.module.css";
@@ -10,16 +11,18 @@ const MovieCardHeader = ({ title }) => {
     <div className={styles.headerContainer}>
       <div className={styles.title}>{title}</div>
 
-      <Button
-        type="tertiaryBtn"
-        hasIcon={true}
-        icon={chevron}
-        iconPosition="after"
-        iconSize="medium"
-        styleHolder={styles.moreBtn}
-      >
-        show more
-      </Button>
+      <Link to="/default">
+        <Button
+          type="tertiaryBtn"
+          hasIcon={true}
+          icon={chevron}
+          iconPosition="after"
+          iconSize="medium"
+          styleHolder={styles.moreBtn}
+        >
+          show more
+        </Button>
+      </Link>
     </div>
   );
 };
