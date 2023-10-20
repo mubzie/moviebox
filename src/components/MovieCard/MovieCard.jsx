@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import MovieCardHeader from "../movieHeader/MovieCardHeader";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
 import styles from "./MovieCard.module.css";
 import imdb from "/src/assets/imdb.png";
-import Favorite from "/src/assets/Favorite.png";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -14,11 +13,6 @@ const MovieCard = () => {
   const [movieData, setMovieData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const handleClick = (cardId) => {
-    const targetDiv = document.getElementById(cardId);
-    targetDiv.style.backgroundColor = "#487520";
-  };
 
   const basePosterUrl = "https://image.tmdb.org/t/p/w500";
 
