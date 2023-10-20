@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import closeBtn from "../../assets/close.png";
@@ -32,6 +32,11 @@ const MobileMenu = ({ isOpen, onClose }) => {
       </div>
     </div>
   );
+};
+
+MobileMenu.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
 };
 
 export default MobileMenu;
