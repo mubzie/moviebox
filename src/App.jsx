@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import React from "react";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import LandingPage from "./components/landingPage/LandingPage";
 // import MobileNavDrawer from "./components/MobileMenu/MobileMenu";
 // import MovieCardHeader from "./components/movieHeader/MovieCardHeader";
@@ -8,7 +8,7 @@ import LandingPage from "./components/landingPage/LandingPage";
 // import Footer from "./components/Footer/Footer";
 // import styles from "./App.module.css";
 
-export const apiKey = import.meta.env.VITE_API_KEY;
+// export const apiKey = import.meta.env.VITE_API_KEY;
 
 function App() {
   // const [moviesId, setMoviesId] = useState([]);

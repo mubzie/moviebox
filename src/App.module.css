@@ -1,4 +1,4 @@
-a {
+/* a {
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ a {
 }
 
 /* media query */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .containerWrapper {
     padding: 56px 56px;
   }
@@ -66,4 +66,4 @@ a {
     display: flex;
     justify-content: center;
   }
-}
+}  */
