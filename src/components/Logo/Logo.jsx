@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import tv from "/src/assets/tv.png";
 import styles from "./Logo.module.css";
 
@@ -11,6 +11,11 @@ const Logo = ({ children, logoText }) => {
       <div className={logoText}>{children}</div>
     </div>
   );
+};
+
+Logo.propTypes = {
+  children: PropTypes.element,
+  logoText: PropTypes.string,
 };
 
 export default Logo;
