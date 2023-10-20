@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React from "react";
+import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./MovieCardHeader.module.css";
 import chevron from "/src/assets/chevron.png";
@@ -21,6 +22,10 @@ const MovieCardHeader = ({ title }) => {
       </Button>
     </div>
   );
+};
+
+MovieCardHeader.propTypes = {
+  title: PropTypes.string,
 };
 
 export default MovieCardHeader;
