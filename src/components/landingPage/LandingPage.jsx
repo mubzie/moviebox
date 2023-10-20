@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -36,7 +36,6 @@ const LandingPage = () => {
         const data = await response.json();
 
         const trendMovies = data.results.splice(15);
-        console.log(trendMovies);
 
         movieCount.map((index) => {
           requiredData = [
