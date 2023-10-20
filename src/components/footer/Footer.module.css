@@ -12,6 +12,11 @@
   gap: 48px;
 }
 
+.githubIcon {
+  width: 26px;
+  height: 26px;
+}
+
 .smIcon {
   width: 24px;
   height: 24px;
@@ -19,7 +24,7 @@
 }
 
 .copyRightText {
-  font-size: 14px;
+  font-size: 0.875rem;
   text-transform: uppercase;
   font-weight: 700;
   color: #6b7280;
