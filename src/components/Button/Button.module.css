@@ -4,44 +4,37 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   width: 100%;
   padding: 8px 16px;
   border-radius: 6px;
   border: none;
-
   font-family: DM Sans;
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
-
   cursor: pointer;
 }
 
 .primaryBtn {
   white-space: nowrap;
   box-sizing: border-box;
-
-  background: var(--rose-700, #be123c);
-  color: var(--white, #fff);
-
-  border: 2px solid var(--rose-700, #be123c);
+  background-color: #be123c;
+  color: #fff;
+  border: 2px solid #be123c;
 }
 
 .secondaryBtn {
   white-space: nowrap;
-  color: var(--rose-700, #be123c);
-  background: var(--white, #fff);
-
-  border: 2px solid var(--rose-700, #be123c);
+  color: #be123c;
+  background-color: #fff;
+  border: 2px solid #be123c;
 }
 
 .tertiaryBtn {
   white-space: nowrap;
-  background: var(--white, #fff);
-  color: var(--rose-700, #be123c);
-
-  border: 2px solid var(--white, #fff);
+  background-color: #fff;
+  color: #be123c;
+  border: 2px solid #fff;
 }
 
 .small {
