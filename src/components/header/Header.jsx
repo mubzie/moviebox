@@ -1,8 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import styles from "./Header.module.css";
-// import tv from "/src/assets/tv.png";
-// import Search from "/src/assets/Search.png";
-// import Menu from "/src/assets/Menu.png";
 import Logo from "../Logo/Logo";
 import Menu from "../../assets/Menu.png";
 import Button from "../Button/Button";
@@ -13,7 +11,7 @@ const Header = () => {
 
   return (
     <>
-      <div className={styles.headerContaner}>
+      <div className={styles.headerContainer}>
         <Logo logoText={styles.logoText}>MovieBox</Logo>
 
         <div className={styles.btnNavDesktop}>
