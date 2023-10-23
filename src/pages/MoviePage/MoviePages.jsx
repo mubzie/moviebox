@@ -78,7 +78,7 @@ const MoviePage = () => {
   return (
     <>
       <div className={styles.container}>
-        <aside>
+        {/* <aside>
           <Link to={`/`}>
             <div className={styles.asideHeader}>
               {" "}
@@ -118,7 +118,7 @@ const MoviePage = () => {
               Log out{" "}
             </li>
           </ul>
-        </aside>
+        </aside> */}
 
         <main>
           <div className={styles.imgBg}>
