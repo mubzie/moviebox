@@ -3,10 +3,6 @@
   padding: 40px 72px 72px;
 }
 
-main {
-  margin-top: 72px;
-}
-
 .imgContainer {
   position: relative;
 }
@@ -15,18 +11,6 @@ img.imageBg {
   object-fit: cover;
   width: 100%;
   height: 450px;
-  border-radius: 8px;
-}
-
-img.imageBgPoster {
-  position: absolute;
-  top: 80px;
-  left: 40px;
-  z-index: 1;
-  object-fit: cover;
-  width: 200px;
-  height: inherit;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
 }
 
@@ -40,18 +24,6 @@ img.imageBgPoster {
   height: 100%;
   border-radius: 8px;
   border: none;
-}
-
-.infoText {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333333;
-}
-
-p {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #666666;
 }
 
 .pageContent {
@@ -68,25 +40,22 @@ p {
   color: #333333;
 }
 
-.right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
 .movieInfo {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px;
   font-size: 1rem;
   white-space: nowrap;
   font-weight: 600;
-  color: #404040;
+  color: #be123c;
 }
 
-.overview {
-  font-size: 1rem;
+.title {
+  display: inline-block;
+  width: max-content;
+  background-color: #7fffd4;
+  padding: 4px;
 }
 
 .ratingIconContainer {
@@ -94,7 +63,7 @@ p {
   gap: 4px;
   font-size: 1rem;
   font-weight: 600;
-  color: #666666;
+  color: #be123c;
 }
 
 .ratingIcon {
@@ -106,19 +75,16 @@ p {
   display: flex;
 }
 
-.castContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.overview {
+  font-size: 1rem;
 }
 
-.mainConainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 24px;
-  font-size: 0.875rem;
-  font-weight: 500;
+h4 {
+  display: inline-block;
+  width: max-content;
+  padding: 4px;
+  background-color: #7fffd4;
+  color: #be123c;
 }
 
 .crewContainer {
@@ -141,15 +107,37 @@ p {
   gap: 8px;
 }
 
+.infoProfile {
+  text-align: center;
+  font-weight: 500;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.castContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mainConainerCast {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 .imgProfile {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-}
-
-.infoProfile {
-  text-align: center;
-  font-weight: 500;
 }
 
 .errorState {
@@ -206,5 +194,15 @@ p {
 
   .imageBgPoster {
     display: none;
+  }
+
+  .overview {
+    padding-bottom: 16px;
+    border-bottom: 2px solid #be123c;
+  }
+
+  .crewContainer {
+    padding-bottom: 16px;
+    border-bottom: 2px solid #be123c;
   }
 }

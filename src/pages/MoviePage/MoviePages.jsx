@@ -188,7 +188,7 @@ const MoviePage = () => {
         <div className={styles.pageContent}>
           <div className={styles.left}>
             <div className={styles.movieInfo}>
-              <div data-testid="movie-title">{movieData.title}</div>
+              <div data-testid="movie-title" className={styles.title}>{movieData.title}</div>
               {" • "}
               <div>{movieData.country}</div>
               {" • "}
@@ -236,7 +236,7 @@ const MoviePage = () => {
           <div className={styles.right}>
             <div className={styles.castContainer}>
               <h4>Top Cast</h4>
-              <div className={styles.mainConainer} key={movieData.id}>
+              <div className={styles.mainConainerCast} key={movieData.id}>
                 {castData.map((cast) => {
                   return (
                     <div className={styles.infoContainer} key={movieData.id}>
