@@ -2,6 +2,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
 import styles from "./MoviePages.module.css";
 import tv from "/src/assets/tv.png";
 import Home from "/src/assets/Home.png";
@@ -25,6 +26,7 @@ const MoviePage = () => {
   const [loading, setLoading] = useState(true);
 
   const baseUrl = "https://image.tmdb.org/t/p/original";
+  const posterBaseUrl = "https://image.tmdb.org/t/p/w500";
 
   useEffect(() => {
     async function fetchMovieData() {
@@ -38,6 +40,7 @@ const MoviePage = () => {
           throw new Error("server error");
         }
         const data = await response.json();
+        console.log(data);
 
         requiredData = {
           ...requiredData,
@@ -45,15 +48,17 @@ const MoviePage = () => {
           release_date: data.release_date,
           runtime: data.runtime,
           overview: data.overview,
-          imdb_id: data.imdb_id,
+
           id: data.id,
           country: data.production_countries
             .map((arr) => arr.iso_3166_1)
             .join("-"),
           genres: data.genres.map((arr) => arr.name).join(", "),
           poster: data.poster_path,
+          backdrop: data.backdrop_path,
           rating: data.vote_average.toFixed(1),
           count: data.vote_count,
+          vote: data.vote_average,
         };
 
         setMovieData(requiredData);
@@ -77,118 +82,79 @@ const MoviePage = () => {
 
   return (
     <>
+      <Header />
+
       <div className={styles.container}>
-        {/* <aside>
-          <Link to={`/`}>
-            <div className={styles.asideHeader}>
-              {" "}
-              <img src={tv} className={styles.asideIcon}></img> MovieBox
-            </div>
-          </Link>
-          <ul className={styles.ulPages}>
-            <li>
-              <img src={Home} className={styles.pages}></img>
-              Home
-            </li>
-            <li style={{ backgroundColor: "#FFEAEF", color: "#BE123C" }}>
-              <img src={projector} className={styles.pages}></img>
-              Movies
-            </li>
-            <li>
-              <img src={show} className={styles.pages}></img>
-              TV series
-            </li>
-            <li>
-              <img src={Calendar} className={styles.pages}></img>
-              Upcomin
-            </li>
-          </ul>
+        <div className={styles.imgContainer}>
+          <img
+            src={baseUrl + movieData.backdrop}
+            className={styles.imageBg}
+            alt="movie poster"
+          ></img>
 
-          <div className={styles.asideText}>
-            <div className={styles.infoText}>
-              Play movie quizes and earn free tickets
-            </div>
-            <p>50k people are playing now</p>
-            <button className={styles.asideBtn}>start playing</button>
-          </div>
+          <img
+            src={posterBaseUrl + movieData.poster}
+            className={styles.imageBgPoster}
+            alt="movie poster"
+          ></img>
+        </div>
 
-          <ul className={styles.ulPages} style={{ marginBottom: "56px" }}>
-            <li>
-              <img src={Logout} className={styles.pages}></img>
-              Log out{" "}
-            </li>
-          </ul>
-        </aside> */}
-
-        <main>
-          <div className={styles.imgBg}>
-            <img
-              src={baseUrl + movieData?.poster}
-              className={styles.asideImg}
-              alt="movie poster"
-            ></img>
-          </div>
-
-          <div className={styles.containerPages}>
-            <div className={styles.leftSide}>
-              <div className={styles.heading}>
-                <div data-testid="movie-title">{movieData?.title}</div>
-                {" • "}
-                <div data-testid="movie-release-date">
-                  {movieData?.release_date}
-                </div>
-                {" • "}
-                <div data-testid="movie-runtime">{movieData?.runtime}</div>
-                {" • "}
-                <div>{movieData?.genres}</div>
+        <div className={styles.pageContent}>
+          <div className={styles.left}>
+            <div className={styles.movieInfo}>
+              <div data-testid="movie-title">{movieData.title}</div>
+              {" • "}
+              <div>{movieData.country}</div>
+              {" • "}
+              <div data-testid="movie-release-date">
+                {movieData.release_date}
               </div>
-
-              <div className={styles.subHeading}>
-                <div data-testid="movie-overview">{movieData?.overview}</div>
-              </div>
-            </div>
-
-            <div className={styles.rightSide}>
-              <div className={styles.rightSideIcon}>
-                <img src={Heart} className={styles.dIcon}></img>
-                <img src={Share} className={styles.dIcon}></img>
-                <img src={Bookmark} className={styles.dIcon}></img>
-
-                <div className={styles.ratingIconContainer}>
-                  <img src={Star} className={styles.ratingIcon}></img>
-                  <div className={styles.ratingWrapper}>
-                    <div>{movieData?.vote}</div>
-                    {"|"}
-                    <div>{movieData?.count}</div>
-                  </div>
+              {" • "}
+              <div data-testid="movie-runtime">{movieData.runtime} mins</div>
+              {" • "}
+              <div>{movieData.genres}</div>
+              {" • "}
+              <div className={styles.ratingIconContainer}>
+                <img src={Star} className={styles.ratingIcon}></img>
+                <div className={styles.ratingWrapper}>
+                  <div>{movieData.vote}</div>
+                  {"("}
+                  <div>{movieData.count}</div>
+                  {")"}
                 </div>
               </div>
+            </div>
 
-              <div className={styles.optionBtn}>
-                <button className={styles.optionIcon}>
-                  <span>
-                    <img src={tickets} className={styles.optIcon}></img>
-                  </span>
-                  See Showtimes
-                </button>
-
-                <button
-                  className={styles.optionIcon}
-                  style={{
-                    backgroundColor: "#FFEAEF",
-                    color: "#333333",
-                    border: "1px solid #BE123C",
-                  }}
-                >
-                  <span>
-                    <img src={List} className={styles.optIcon}></img>
-                  </span>
-                  More watch options
-                </button>
-              </div>
+            <div className={styles.overview}>
+              <div data-testid="movie-overview">{movieData.overview}</div>
             </div>
           </div>
-        </main>
+
+          <div className={styles.right}>
+            <div className={styles.optionBtn}>
+              <button className={styles.optionIcon}>
+                <span>
+                  <img src={tickets} className={styles.optIcon}></img>
+                </span>
+                See Showtimes
+              </button>
+
+              <button
+                className={styles.optionIcon}
+                style={{
+                  backgroundColor: "#FFEAEF",
+                  color: "#333333",
+                  border: "1px solid #BE123C",
+                }}
+              >
+                <span>
+                  <img src={List} className={styles.optIcon}></img>
+                </span>
+                More watch options
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
