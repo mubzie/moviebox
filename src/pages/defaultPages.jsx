@@ -2,8 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../../components/Button/Button";
-import styles from "./DefaultPages.module.css";
+import Button from "../components/button";
+import styles from "../styles/DefaultPages.module.css";
 
 const DefaultPages = () => {
   return (

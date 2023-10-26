@@ -3,7 +3,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./MoviePages.module.css";
+import styles from "../styles/MoviePages.module.css";
 
 import Star from "/src/assets/Star.png";
 
