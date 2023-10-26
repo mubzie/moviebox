@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+import React from "react";
 import PropTypes from "prop-types";
 import tv from "/src/assets/tv.png";
 import styles from "./Logo.module.css";

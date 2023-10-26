@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../Header/Header.jsx";
+import Header from "../header/Header.jsx";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Button from "../Button/Button.jsx";
