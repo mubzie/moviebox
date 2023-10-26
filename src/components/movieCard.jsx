@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MovieCardHeader from "./movieCardHeader";
+import MovieCardHeader from "./MovieCardHeader";
 import Button from "./button";
 import styles from "../styles/MovieCard.module.css";
 import imdb from "/src/assets/imdb.png";
