@@ -30,7 +30,7 @@ const Button = ({
 
 Button.propTypes = {
   type: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.string,
   onClick: PropTypes.func,
   hasIcon: PropTypes.bool,
   icon: PropTypes.string,

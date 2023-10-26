@@ -14,7 +14,7 @@ const Logo = ({ children, logoText }) => {
 };
 
 Logo.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.string,
   logoText: PropTypes.string,
 };
 
