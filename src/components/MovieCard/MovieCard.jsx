@@ -25,10 +25,8 @@ const MovieCard = () => {
         if (response.status >= 400) {
           throw new Error("server error");
         }
-
         const data = await response.json();
         const dataResult = data.results;
-        console.log(dataResult);
 
         const requiredData = dataResult.map((result) => ({
           title: result.title,
