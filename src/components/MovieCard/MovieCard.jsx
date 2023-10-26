@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MovieCardHeader from "../movieHeader/MovieCardHeader";
-import Button from "../Button/Button";
+import Button from "../button/Button";
 import styles from "./MovieCard.module.css";
 import imdb from "/src/assets/imdb.png";
 

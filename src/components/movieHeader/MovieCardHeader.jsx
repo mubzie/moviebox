@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Button from "../Button/Button";
+import Button from "../button/Button";
 import styles from "./MovieCardHeader.module.css";
 import chevron from "/src/assets/chevron.png";
 
