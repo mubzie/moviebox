@@ -2,10 +2,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../header/Header.jsx";
-import MovieCard from "../movieCard/MovieCard.jsx";
-import Footer from "../footer/Footer.jsx";
-import Button from "../button/Button.jsx";
+import Header from "../header/header.jsx";
+import MovieCard from "../movieCard/movieCard.jsx";
+import Footer from "../footer/footer.jsx";
+import Button from "../button/button.jsx";
 import styles from "./LandingPage.module.css";
 import Star from "/src/assets/Star.png";
 import Play from "/src/assets/Play.png";

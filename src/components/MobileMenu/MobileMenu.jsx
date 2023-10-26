@@ -2,8 +2,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Logo from "../logo/Logo";
-import Button from "../button/Button";
+import Logo from "../logo/logo";
+import Button from "../button/button";
 import closeBtn from "../../assets/close.png";
 import styles from "./MobileMenu.module.css";
 

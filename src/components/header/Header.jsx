@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import Logo from "../logo/Logo.jsx";
+import Logo from "../logo/logo.jsx";
 import Menu from "../../assets/Menu.png";
-import Button from "../button/Button";
-import MobileMenu from "../mobileMenu/MobileMenu";
+import Button from "../button/button";
+import MobileMenu from "../mobileMenu/mobileMenu";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
