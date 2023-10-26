@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./header.jsx";
-import MovieCard from "./MovieCard.jsx";
+import MovieCard from "./movieCard.jsx";
 import Footer from "./footer.jsx";
 import Button from "./button.jsx";
 import styles from "../styles/LandingPage.module.css";
