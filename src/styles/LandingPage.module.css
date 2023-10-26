@@ -1,0 +1,94 @@
+.cardTrendiingMovies {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 572px;
+  background-size: cover;
+  background-position: center;
+}
+
+.containerWrapper {
+  width: auto;
+  max-width: 400px;
+  margin-top: 64px;
+  padding-left: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.ratingContainer {
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.ratingIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.ratingWrapper {
+  display: flex;
+}
+
+.subTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.loadingState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(141, 141, 141, 0.8);
+  z-index: 2;
+}
+
+.errorState {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* media query */
+@media (max-width: 900px) {
+  .containerWrapper {
+    padding: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .containerWrapper {
+    width: auto;
+    padding: 128px 24px 16px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}

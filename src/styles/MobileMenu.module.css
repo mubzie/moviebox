@@ -1,0 +1,49 @@
+.overlay {
+  background: hsl(220deg 5% 40% / 0.8);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.content {
+  width: 320px;
+  height: 100%;
+  background-color: white;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #be123c;
+}
+
+.iconWrapper {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.closeIcon {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.btnNavMobile {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

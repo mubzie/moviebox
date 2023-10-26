@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.iconWrapper {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.logoIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logoIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logoText {
+    font-size: 1.25rem;
+  }
+}
