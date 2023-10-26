@@ -10,7 +10,7 @@ import Star from "/src/assets/Star.png";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const MoviePage = () => {
-  let { id = "" } = useParams();
+  let { id } = useParams();
   const [movieData, setMovieData] = useState([]);
   const [castData, setCastData] = useState([]);
   const [crewData, setCrewData] = useState([]);
@@ -34,7 +34,6 @@ const MoviePage = () => {
           throw new Error("server error");
         }
         const data = await response.json();
-        console.log(data);
 
         requiredData = {
           ...requiredData,
@@ -42,7 +41,6 @@ const MoviePage = () => {
           release_date: data.release_date,
           runtime: data.runtime,
           overview: data.overview,
-
           id: data.id,
           country: data.production_countries
             .map((arr) => arr.iso_3166_1)
@@ -76,7 +74,6 @@ const MoviePage = () => {
           throw new Error("server error");
         }
         const data = await response.json();
-
         const casts = data.cast.slice(0, 5);
 
         const requiredData = casts.map((cast) => ({
@@ -94,7 +91,6 @@ const MoviePage = () => {
     }
 
     fetchCastData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -107,7 +103,6 @@ const MoviePage = () => {
           throw new Error("server error");
         }
         const data = await response.json();
-
         const crews = data.crew.slice(0, 10);
 
         const requiredData = crews.map((crew) => ({
@@ -136,7 +131,6 @@ const MoviePage = () => {
           throw new Error("server error");
         }
         const data = await response.json();
-
         const videos = data.results.slice(0, 1);
 
         const requiredData = videos.map((video) => video.key);
@@ -155,7 +149,7 @@ const MoviePage = () => {
   if (error)
     return (
       <div className={styles.errorState}>
-        A network error was encountered error.message
+        A network error was encountered. {error}.
       </div>
     );
   if (loading)
@@ -188,7 +182,9 @@ const MoviePage = () => {
         <div className={styles.pageContent}>
           <div className={styles.left}>
             <div className={styles.movieInfo}>
-              <div data-testid="movie-title" className={styles.title}>{movieData.title}</div>
+              <div data-testid="movie-title" className={styles.title}>
+                {movieData.title}
+              </div>
               {" • "}
               <div>{movieData.country}</div>
               {" • "}
